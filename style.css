@@ -1,0 +1,78 @@
+  :root {
+    --bg: #0a0a0a;
+    --green: #2ee86a;
+    --ink: #111;
+    --muted: #555;
+    --line: #111;
+    --card: #fff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: #eee; font-family: ui-sans-serif, system-ui, sans-serif; }
+  header.top {
+    border-bottom: 2px solid var(--green);
+    padding: 12px 16px;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    background: #000;
+  }
+  h1 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 0; color: var(--green); font-family: ui-monospace, Menlo, monospace; }
+  .sub { font-size: 12px; color: #9a9a9a; }
+  main { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  section { padding: 12px; background: #111; }
+  section.parrilla { border-right: 2px solid #000; background: #161616; }
+  h2 { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--green); margin: 0 0 10px; font-family: ui-monospace, Menlo, monospace; }
+  .grid { display: flex; flex-direction: column; gap: 14px; }
+  .card {
+    background: var(--card);
+    color: var(--ink);
+    border: 2px solid #000;
+    box-shadow: 0 0 0 3px var(--green);
+    padding: 0;
+    overflow: hidden;
+  }
+  .card header {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; font-weight: 700; letter-spacing: .04em;
+    margin: 0; padding: 8px 10px;
+    background: #fff; color: #111;
+    border-bottom: 1px solid #ddd;
+  }
+  .card .meta { color: #444; font-weight: 600; }
+  .card img {
+    width: 100%; height: auto; display: block;
+    background: #031a08;
+    border-top: 3px solid var(--green);
+    border-bottom: 3px solid var(--green);
+  }
+  .copy {
+    font-size: 13px; line-height: 1.35;
+    margin: 0; padding: 10px 10px 6px;
+    color: #111; background: #fff;
+  }
+  .cite { margin: 0; padding: 0 10px 8px; background: #fff; }
+  .cite a { color: #111; font-size: 11px; font-weight: 600; }
+  .actions { margin: 0; padding: 0 10px 8px; background: #fff; }
+  .btn {
+    background: #fff; color: #111; border: 2px solid #111;
+    font-family: inherit; font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    padding: 5px 8px; cursor: pointer; font-weight: 700;
+  }
+  .btn.ghost { border-color: #111; color: #111; }
+  .btn:hover { background: #111; color: #fff; }
+  textarea {
+    width: 100%; background: #fff; color: #111; border: 2px solid #111;
+    font-family: inherit; font-size: 12px; padding: 6px; resize: vertical;
+  }
+  .comment { display: flex; flex-direction: column; gap: 6px; padding: 0 10px 10px; background: #fff; margin: 0; }
+  .hint { font-size: 11px; color: #111; margin: 0; padding: 0 10px 10px; background: #fff; }
+  .empty { color: #888; font-size: 13px; }
+  .card.out { opacity: .45; }
+  .card.out::after { content: "SACADO"; display: block; font-size: 11px; letter-spacing: .2em; padding: 6px 10px; background: #fff; color: #111; font-weight: 700; }
+
+  .card { display: flex; flex-direction: column; }
+  .card img { order: -1; border-top: none; }
+  .card header {
+    order: 0;
+    border-bottom: none;
+    border-top: 1px solid #e3e3e3;
+  }
