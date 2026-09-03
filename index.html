@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parrilla X · @andres_lowener</title>
+<style>
+  :root {
+    --bg: #050805;
+    --green: #39ff14;
+    --green-dim: #1d6b12;
+    --green-2: #7cff6b;
+    --panel: #0b120b;
+    --line: #1a3a16;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--green-2); font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  body {
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.25) 3px);
+    min-height: 100vh;
+  }
+  header.top {
+    border-bottom: 1px solid var(--line);
+    padding: 18px 24px;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  }
+  h1 { font-size: 14px; letter-spacing: .16em; text-transform: uppercase; margin: 0; color: var(--green); }
+  .sub { font-size: 12px; color: var(--green-dim); }
+  main { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  section { padding: 20px; }
+  section.parrilla { border-right: 1px solid var(--line); }
+  h2 { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--green); margin: 0 0 16px; }
+  .grid { display: flex; flex-direction: column; gap: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line); padding: 12px; }
+  .card header { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 8px; color: var(--green); }
+  .card img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+  .copy { font-size: 13px; line-height: 1.45; }
+  .cite a { color: var(--green); font-size: 11px; }
+  .actions { margin: 10px 0 8px; }
+  .btn {
+    background: transparent; color: var(--green); border: 1px solid var(--green);
+    font-family: inherit; font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+    padding: 7px 10px; cursor: pointer;
+  }
+  .btn.ghost { border-color: var(--green-dim); color: var(--green-2); }
+  .btn:hover { background: #0f2a0c; }
+  textarea {
+    width: 100%; background: #050805; color: var(--green-2); border: 1px solid var(--line);
+    font-family: inherit; font-size: 12px; padding: 8px; resize: vertical;
+  }
+  .comment { display: flex; flex-direction: column; gap: 8px; }
+  .hint { font-size: 11px; color: var(--green); }
+  .empty { color: var(--green-dim); font-size: 13px; }
+  .card.out { opacity: .4; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>andres@x:~$ parrilla</h1>
+    <div class="sub">@andres_lowener · CRT queue · Santiago</div>
+  </div>
+  <div class="sub">Sacar o comentar acá. El mensaje se copia: pégalo en el chat.</div>
+</header>
+<main>
+  <section class="parrilla">
+    <h2>Parrilla · por publicar</h2>
+    <div class="grid" id="pending">
+    <article class="card" data-n="11" data-status="pending" id="p11">
+      <header>
+        <span class="slot">Hoy · 09:30</span>
+        <span class="meta">#11 · Pichai</span>
+      </header>
+      <img src="img/11.png" alt="post 11">
+      <p class="copy">Google lanza un modelo que encuentra vulnerabilidades… y las parcha. A velocidad y precio Flash.<br><br>La defensa también se industrializó.</p>
+      <p class="cite"><a href="https://x.com/sundarpichai/status/2095184464800526655" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="11">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="11">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="14" data-status="pending" id="p14">
+      <header>
+        <span class="slot">Hoy · 11:00</span>
+        <span class="meta">#14 · Claude</span>
+      </header>
+      <img src="img/14.png" alt="post 14">
+      <p class="copy">Claude ya no espera en el chat. Usa tu computador en segundo plano: hace click, escribe, abre apps, mientras tú haces otra cosa.<br><br>El copiloto se acaba de convertir en operador.</p>
+      <p class="cite"><a href="https://x.com/claudeai/status/2095226833293685100" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="14">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="14">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="3" data-status="pending" id="p3">
+      <header>
+        <span class="slot">Hoy · 12:30</span>
+        <span class="meta">#3 · Diamandis</span>
+      </header>
+      <img src="img/03.png" alt="post 3">
+      <p class="copy">El junior que usa IA todos los días ya le gana al senior que no la toca.<br><br>No es apocalipsis de empleos. Es apocalipsis de skills.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="3">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="3">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="12" data-status="pending" id="p12">
+      <header>
+        <span class="slot">Hoy · 14:00</span>
+        <span class="meta">#12 · Pichai</span>
+      </header>
+      <img src="img/12.png" alt="post 12">
+      <p class="copy">86,2% en CyberGym. +70% encontrando fallas en 20 lenguajes. Y parcha.<br><br>El cuello de botella ya no es detectar. Es quién deja que el parche llegue a producción.</p>
+      <p class="cite"><a href="https://x.com/sundarpichai/status/2095184464800526655" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="12">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="12">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="15" data-status="pending" id="p15">
+      <header>
+        <span class="slot">Hoy · 15:30</span>
+        <span class="meta">#15 · Claude</span>
+      </header>
+      <img src="img/15.png" alt="post 15">
+      <p class="copy">El salto no es “mejor modelo”. Es que la IA salió de la ventana y se metió al escritorio.<br><br>Ahí cambia el proceso. No la herramienta.</p>
+      <p class="cite"><a href="https://x.com/claudeai/status/2095226833293685100" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="15">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="15">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="7" data-status="pending" id="p7">
+      <header>
+        <span class="slot">Hoy · 17:00</span>
+        <span class="meta">#7 · Diamandis</span>
+      </header>
+      <img src="img/07.png" alt="post 7">
+      <p class="copy">Al que usa IA para hacer mejor su trabajo, lo promocionan.<br>Al que se niega, lo reemplazan.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="7">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="7">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="13" data-status="pending" id="p13">
+      <header>
+        <span class="slot">Hoy · 18:30</span>
+        <span class="meta">#13 · Pichai</span>
+      </header>
+      <img src="img/13.png" alt="post 13">
+      <p class="copy">Lo restringen a “defensores de confianza”. Porque la misma capacidad, en otras manos, es un arma.<br><br>Ofensa y defensa, las dos a velocidad de modelo.</p>
+      <p class="cite"><a href="https://x.com/sundarpichai/status/2095184464800526655" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="13">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="13">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="16" data-status="pending" id="p16">
+      <header>
+        <span class="slot">Hoy · 20:00</span>
+        <span class="meta">#16 · Claude</span>
+      </header>
+      <img src="img/16.png" alt="post 16">
+      <p class="copy">Si el agente hace click como tú, el trabajo ya no es ejecutar. Es diseñar qué se le deja hacer… y qué no.</p>
+      <p class="cite"><a href="https://x.com/claudeai/status/2095226833293685100" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="16">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="16">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="10" data-status="pending" id="p10">
+      <header>
+        <span class="slot">Hoy · 21:30</span>
+        <span class="meta">#10 · Diamandis</span>
+      </header>
+      <img src="img/10.png" alt="post 10">
+      <p class="copy">Las empresas que adoptaron IA no despidieron: el empleo creció 10% en dos años.<br><br>Eso es transformación. No recorte.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="10">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="10">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="2" data-status="pending" id="p2">
+      <header>
+        <span class="slot">Mañana · 08:00</span>
+        <span class="meta">#2 · Diamandis</span>
+      </header>
+      <img src="img/02.png" alt="post 2">
+      <p class="copy">La IA no te saca el cargo. Te saca las tareas aburridas del cargo.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="2">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="2">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="4" data-status="pending" id="p4">
+      <header>
+        <span class="slot">Mañana · 09:30</span>
+        <span class="meta">#4 · Diamandis</span>
+      </header>
+      <img src="img/04.png" alt="post 4">
+      <p class="copy">En consulting, derecho, auditoría: el asociado con IA ya es más rápido que el socio de 25 años que no la usa.<br><br>La jerarquía se está invirtiendo.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="4">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="4">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="5" data-status="pending" id="p5">
+      <header>
+        <span class="slot">Mañana · 11:00</span>
+        <span class="meta">#5 · Diamandis</span>
+      </header>
+      <img src="img/05.png" alt="post 5">
+      <p class="copy">El dato que importa no es “la IA puede hacer tu trabajo”.<br><br>Es la palabra parcialmente: 93% de los empleos. El rol cambia. No desaparece.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="5">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="5">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="6" data-status="pending" id="p6">
+      <header>
+        <span class="slot">Mañana · 12:30</span>
+        <span class="meta">#6 · Diamandis</span>
+      </header>
+      <img src="img/06.png" alt="post 6">
+      <p class="copy">Un cargo no es una cosa. Es un paquete de tareas.<br><br>La IA redacta, resume, analiza. No negocia, no arma confianza, no decide con incertidumbre.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="6">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="6">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="8" data-status="pending" id="p8">
+      <header>
+        <span class="slot">Mañana · 14:00</span>
+        <span class="meta">#8 · Diamandis</span>
+      </header>
+      <img src="img/08.png" alt="post 8">
+      <p class="copy">High agency es de las pocas ventajas humanas que esta era premia.<br><br>Usarla todos los días. En el trabajo real. No en un curso.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="8">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="8">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="9" data-status="pending" id="p9">
+      <header>
+        <span class="slot">Mañana · 15:30</span>
+        <span class="meta">#9 · Diamandis</span>
+      </header>
+      <img src="img/09.png" alt="post 9">
+      <p class="copy">Le tienen miedo a la IA los que no la han usado lo suficiente.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="9">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="9">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+    </div>
+  </section>
+  <section>
+    <h2>Publicado</h2>
+    <div class="grid" id="posted">
+    <article class="card" data-n="1" data-status="posted" id="p1">
+      <header>
+        <span class="slot">Hoy · 08:00</span>
+        <span class="meta">#1 · Diamandis</span>
+      </header>
+      <img src="img/01.png" alt="post 1">
+      <p class="copy">No es apocalipsis de empleos. Es transformación.<br><br>170 millones de roles nuevos. 92 desplazados. El titular asusta. El dato no.</p>
+      <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p><p class="cite"><a href="https://x.com/andres_lowener/status/2095492418682462380" target="_blank" rel="noopener">ver en X</a></p>
+      
+      <p class="hint" hidden></p>
+    </article>
+    </div>
+  </section>
+</main>
+<script>
+function copy(text) {
+  navigator.clipboard.writeText(text).catch(() => {});
+}
+document.querySelectorAll('[data-act="sacar"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const n = btn.dataset.n;
+    const card = document.getElementById('p' + n);
+    const msg = 'Saca el #' + n + ' de la parrilla';
+    copy(msg);
+    card.classList.add('out');
+    const hint = card.querySelector('.hint');
+    hint.hidden = false;
+    hint.textContent = 'Copiado: "' + msg + '". Pégalo en el chat para que lo quite de la cola.';
+  });
+});
+document.querySelectorAll('form.comment').forEach(form => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const n = form.dataset.n;
+    const t = form.c.value.trim();
+    if (!t) return;
+    const msg = 'Comentario #' + n + ': ' + t;
+    copy(msg);
+    const hint = form.parentElement.querySelector('.hint');
+    hint.hidden = false;
+    hint.textContent = 'Copiado: pégalo en el chat y lo aplico al post.';
+    form.c.value = '';
+  });
+});
+</script>
+</body>
+</html>

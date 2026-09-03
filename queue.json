@@ -1,0 +1,178 @@
+[
+  {
+    "n": 1,
+    "when": "2026-09-03 08:00",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "No es apocalipsis de empleos. Es transformación.\n\n170 millones de roles nuevos. 92 desplazados. El titular asusta. El dato no.",
+    "image": "img/01.png",
+    "status": "posted",
+    "posted_url": "https://x.com/andres_lowener/status/2095492418682462380",
+    "comments": []
+  },
+  {
+    "n": 11,
+    "when": "2026-09-03 09:30",
+    "src": "Pichai",
+    "url": "https://x.com/sundarpichai/status/2095184464800526655",
+    "text": "Google lanza un modelo que encuentra vulnerabilidades… y las parcha. A velocidad y precio Flash.\n\nLa defensa también se industrializó.",
+    "image": "img/11.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 14,
+    "when": "2026-09-03 11:00",
+    "src": "Claude",
+    "url": "https://x.com/claudeai/status/2095226833293685100",
+    "text": "Claude ya no espera en el chat. Usa tu computador en segundo plano: hace click, escribe, abre apps, mientras tú haces otra cosa.\n\nEl copiloto se acaba de convertir en operador.",
+    "image": "img/14.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 3,
+    "when": "2026-09-03 12:30",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "El junior que usa IA todos los días ya le gana al senior que no la toca.\n\nNo es apocalipsis de empleos. Es apocalipsis de skills.",
+    "image": "img/03.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 12,
+    "when": "2026-09-03 14:00",
+    "src": "Pichai",
+    "url": "https://x.com/sundarpichai/status/2095184464800526655",
+    "text": "86,2% en CyberGym. +70% encontrando fallas en 20 lenguajes. Y parcha.\n\nEl cuello de botella ya no es detectar. Es quién deja que el parche llegue a producción.",
+    "image": "img/12.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 15,
+    "when": "2026-09-03 15:30",
+    "src": "Claude",
+    "url": "https://x.com/claudeai/status/2095226833293685100",
+    "text": "El salto no es “mejor modelo”. Es que la IA salió de la ventana y se metió al escritorio.\n\nAhí cambia el proceso. No la herramienta.",
+    "image": "img/15.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 7,
+    "when": "2026-09-03 17:00",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "Al que usa IA para hacer mejor su trabajo, lo promocionan.\nAl que se niega, lo reemplazan.",
+    "image": "img/07.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 13,
+    "when": "2026-09-03 18:30",
+    "src": "Pichai",
+    "url": "https://x.com/sundarpichai/status/2095184464800526655",
+    "text": "Lo restringen a “defensores de confianza”. Porque la misma capacidad, en otras manos, es un arma.\n\nOfensa y defensa, las dos a velocidad de modelo.",
+    "image": "img/13.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 16,
+    "when": "2026-09-03 20:00",
+    "src": "Claude",
+    "url": "https://x.com/claudeai/status/2095226833293685100",
+    "text": "Si el agente hace click como tú, el trabajo ya no es ejecutar. Es diseñar qué se le deja hacer… y qué no.",
+    "image": "img/16.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 10,
+    "when": "2026-09-03 21:30",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "Las empresas que adoptaron IA no despidieron: el empleo creció 10% en dos años.\n\nEso es transformación. No recorte.",
+    "image": "img/10.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 2,
+    "when": "2026-09-04 08:00",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "La IA no te saca el cargo. Te saca las tareas aburridas del cargo.",
+    "image": "img/02.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 4,
+    "when": "2026-09-04 09:30",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "En consulting, derecho, auditoría: el asociado con IA ya es más rápido que el socio de 25 años que no la usa.\n\nLa jerarquía se está invirtiendo.",
+    "image": "img/04.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 5,
+    "when": "2026-09-04 11:00",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "El dato que importa no es “la IA puede hacer tu trabajo”.\n\nEs la palabra parcialmente: 93% de los empleos. El rol cambia. No desaparece.",
+    "image": "img/05.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 6,
+    "when": "2026-09-04 12:30",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "Un cargo no es una cosa. Es un paquete de tareas.\n\nLa IA redacta, resume, analiza. No negocia, no arma confianza, no decide con incertidumbre.",
+    "image": "img/06.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 8,
+    "when": "2026-09-04 14:00",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "High agency es de las pocas ventajas humanas que esta era premia.\n\nUsarla todos los días. En el trabajo real. No en un curso.",
+    "image": "img/08.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  },
+  {
+    "n": 9,
+    "when": "2026-09-04 15:30",
+    "src": "Diamandis",
+    "url": "https://x.com/peterdiamandis/status/2095169837777469701",
+    "text": "Le tienen miedo a la IA los que no la han usado lo suficiente.",
+    "image": "img/09.png",
+    "status": "pending",
+    "posted_url": "",
+    "comments": []
+  }
+]
