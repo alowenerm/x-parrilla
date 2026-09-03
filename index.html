@@ -83,6 +83,10 @@
     border-bottom: none;
     border-top: 1px solid #e3e3e3;
   }
+
+  .card.hold { box-shadow: 0 0 0 3px #e8a72e; }
+  .card.hold .slot { color: #8a5b00; }
+  .note { margin: 0; padding: 0 10px 8px; background: #fff; color: #8a5b00; font-size: 11px; font-weight: 700; letter-spacing: .04em; }
 </style>
 </head>
 <body>
@@ -95,27 +99,8 @@
 </header>
 <main>
   <section class="parrilla">
-    <h2>Parrilla · por publicar (14)</h2>
+    <h2>Parrilla · por publicar (13)</h2>
     <div class="grid" id="pending">
-    <article class="card" data-n="11" data-status="pending" id="p11">
-      <header>
-        <span class="slot">Hoy · 09:30</span>
-        <span class="meta">#11 · Pichai</span>
-      </header>
-      <img src="img/11.png" alt="post 11">
-      <p class="copy">Google lanza un modelo que encuentra vulnerabilidades… y las parcha. A velocidad y precio Flash.<br><br>La defensa también se industrializó.</p>
-      <p class="cite"><a href="https://x.com/sundarpichai/status/2095184464800526655" target="_blank" rel="noopener">cita original</a></p>
-      
-      <div class="actions">
-        <button type="button" class="btn ghost" data-act="sacar" data-n="11">Sacar de la parrilla</button>
-      </div>
-      <form class="comment" data-n="11">
-        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>
-        <button type="submit" class="btn">Enviar comentario</button>
-      </form>
-      <p class="hint" hidden></p>
-    </article>
-
     <article class="card" data-n="14" data-status="pending" id="p14">
       <header>
         <span class="slot">Hoy · 11:00</span>
@@ -135,14 +120,15 @@
       <p class="hint" hidden></p>
     </article>
 
-    <article class="card" data-n="3" data-status="pending" id="p3">
+    <article class="card hold" data-n="3" data-status="hold" id="p3">
       <header>
-        <span class="slot">Hoy · 12:30</span>
+        <span class="slot">EN ESPERA · Hoy · 12:30</span>
         <span class="meta">#3 · Diamandis</span>
       </header>
       <img src="img/03.png" alt="post 3">
       <p class="copy">El junior que usa IA todos los días ya le gana al senior que no la toca.<br><br>No es apocalipsis de empleos. Es apocalipsis de skills.</p>
       <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      <p class="note">En espera: tono con filo negativo, Andrés decide reescribir o sacar</p>
       
       <div class="actions">
         <button type="button" class="btn ghost" data-act="sacar" data-n="3">Sacar de la parrilla</button>
@@ -156,7 +142,7 @@
 
     <article class="card" data-n="12" data-status="pending" id="p12">
       <header>
-        <span class="slot">Hoy · 14:00</span>
+        <span class="slot">Hoy · 12:30</span>
         <span class="meta">#12 · Pichai</span>
       </header>
       <img src="img/12.png" alt="post 12">
@@ -175,7 +161,7 @@
 
     <article class="card" data-n="15" data-status="pending" id="p15">
       <header>
-        <span class="slot">Hoy · 15:30</span>
+        <span class="slot">Hoy · 14:00</span>
         <span class="meta">#15 · Claude</span>
       </header>
       <img src="img/15.png" alt="post 15">
@@ -194,7 +180,7 @@
 
     <article class="card" data-n="13" data-status="pending" id="p13">
       <header>
-        <span class="slot">Hoy · 17:00</span>
+        <span class="slot">Hoy · 15:30</span>
         <span class="meta">#13 · Pichai</span>
       </header>
       <img src="img/13.png" alt="post 13">
@@ -213,7 +199,7 @@
 
     <article class="card" data-n="16" data-status="pending" id="p16">
       <header>
-        <span class="slot">Hoy · 18:30</span>
+        <span class="slot">Hoy · 17:00</span>
         <span class="meta">#16 · Claude</span>
       </header>
       <img src="img/16.png" alt="post 16">
@@ -232,7 +218,7 @@
 
     <article class="card" data-n="10" data-status="pending" id="p10">
       <header>
-        <span class="slot">Hoy · 20:00</span>
+        <span class="slot">Hoy · 18:30</span>
         <span class="meta">#10 · Diamandis</span>
       </header>
       <img src="img/10.png" alt="post 10">
@@ -251,7 +237,7 @@
 
     <article class="card" data-n="2" data-status="pending" id="p2">
       <header>
-        <span class="slot">Hoy · 21:30</span>
+        <span class="slot">Hoy · 20:00</span>
         <span class="meta">#2 · Diamandis</span>
       </header>
       <img src="img/02.png" alt="post 2">
@@ -270,7 +256,7 @@
 
     <article class="card" data-n="4" data-status="pending" id="p4">
       <header>
-        <span class="slot">Mañana · 08:00</span>
+        <span class="slot">Hoy · 21:30</span>
         <span class="meta">#4 · Diamandis</span>
       </header>
       <img src="img/04.png" alt="post 4">
@@ -289,7 +275,7 @@
 
     <article class="card" data-n="5" data-status="pending" id="p5">
       <header>
-        <span class="slot">Mañana · 09:30</span>
+        <span class="slot">Mañana · 08:00</span>
         <span class="meta">#5 · Diamandis</span>
       </header>
       <img src="img/05.png" alt="post 5">
@@ -308,7 +294,7 @@
 
     <article class="card" data-n="6" data-status="pending" id="p6">
       <header>
-        <span class="slot">Mañana · 11:00</span>
+        <span class="slot">Mañana · 09:30</span>
         <span class="meta">#6 · Diamandis</span>
       </header>
       <img src="img/06.png" alt="post 6">
@@ -327,7 +313,7 @@
 
     <article class="card" data-n="8" data-status="pending" id="p8">
       <header>
-        <span class="slot">Mañana · 12:30</span>
+        <span class="slot">Mañana · 11:00</span>
         <span class="meta">#8 · Diamandis</span>
       </header>
       <img src="img/08.png" alt="post 8">
@@ -344,14 +330,15 @@
       <p class="hint" hidden></p>
     </article>
 
-    <article class="card" data-n="9" data-status="pending" id="p9">
+    <article class="card hold" data-n="9" data-status="hold" id="p9">
       <header>
-        <span class="slot">Mañana · 14:00</span>
+        <span class="slot">EN ESPERA · Mañana · 14:00</span>
         <span class="meta">#9 · Diamandis</span>
       </header>
       <img src="img/09.png" alt="post 9">
       <p class="copy">Le tienen miedo a la IA los que no la han usado lo suficiente.</p>
       <p class="cite"><a href="https://x.com/peterdiamandis/status/2095169837777469701" target="_blank" rel="noopener">cita original</a></p>
+      <p class="note">En espera: tono con filo negativo, Andrés decide reescribir o sacar</p>
       
       <div class="actions">
         <button type="button" class="btn ghost" data-act="sacar" data-n="9">Sacar de la parrilla</button>
@@ -365,8 +352,20 @@
     </div>
   </section>
   <section>
-    <h2>Publicado (1)</h2>
+    <h2>Publicado (2)</h2>
     <div class="grid" id="posted">
+    <article class="card" data-n="11" data-status="posted" id="p11">
+      <header>
+        <span class="slot">Hoy · 09:30</span>
+        <span class="meta">#11 · Pichai</span>
+      </header>
+      <img src="img/11.png" alt="post 11">
+      <p class="copy">Google lanza un modelo que encuentra vulnerabilidades… y las parcha. A velocidad y precio Flash.<br><br>La defensa también se industrializó.</p>
+      <p class="cite"><a href="https://x.com/sundarpichai/status/2095184464800526655" target="_blank" rel="noopener">cita original</a></p><p class="cite"><a href="https://x.com/andres_lowener/status/2095539691382595756" target="_blank" rel="noopener">ver en X</a></p>
+      
+      <p class="hint" hidden></p>
+    </article>
+
     <article class="card" data-n="1" data-status="posted" id="p1">
       <header>
         <span class="slot">Hoy · 08:00</span>

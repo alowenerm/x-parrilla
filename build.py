@@ -27,9 +27,14 @@ def card(item):
     n = item['n']
     posted = item.get('status') == 'posted'
     img = item.get('img_rel') or f"img/{n:02d}.png"
-    parts = [f'    <article class="card" data-n="{n}" data-status="{"posted" if posted else "pending"}" id="p{n}">',
+    status = item.get('status', 'pending')
+    hold = status == 'hold'
+    slot = slot_label(item["when"])
+    if hold:
+        slot = 'EN ESPERA · ' + slot
+    parts = [f'    <article class="card{" hold" if hold else ""}" data-n="{n}" data-status="{status}" id="p{n}">',
              '      <header>',
-             f'        <span class="slot">{html.escape(slot_label(item["when"]))}</span>',
+             f'        <span class="slot">{html.escape(slot)}</span>',
              f'        <span class="meta">#{n} · {html.escape(item["src"])}</span>',
              '      </header>',
              f'      <img src="{img}" alt="post {n}">',
@@ -38,6 +43,8 @@ def card(item):
     if posted and item.get('posted_url'):
         cite += f'<p class="cite"><a href="{html.escape(item["posted_url"])}" target="_blank" rel="noopener">ver en X</a></p>'
     parts.append(cite)
+    if hold and item.get('note'):
+        parts.append(f'      <p class="note">{html.escape(item["note"])}</p>')
     parts.append('      ')
     if not posted:
         parts += ['      <div class="actions">',

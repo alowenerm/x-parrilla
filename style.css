@@ -76,3 +76,7 @@
     border-bottom: none;
     border-top: 1px solid #e3e3e3;
   }
+
+  .card.hold { box-shadow: 0 0 0 3px #e8a72e; }
+  .card.hold .slot { color: #8a5b00; }
+  .note { margin: 0; padding: 0 10px 8px; background: #fff; color: #8a5b00; font-size: 11px; font-weight: 700; letter-spacing: .04em; }

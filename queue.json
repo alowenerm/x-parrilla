@@ -20,7 +20,9 @@
     "text": "Google lanza un modelo que encuentra vulnerabilidades… y las parcha. A velocidad y precio Flash.\n\nLa defensa también se industrializó.",
     "image": "/workspace/x-posts/img/11.png",
     "image_downloads": "/home/box/Downloads/x-posts/11.png",
-    "status": "pending",
+    "status": "posted",
+    "posted_url": "https://x.com/andres_lowener/status/2095539691382595756",
+    "posted_at": "2026-09-03 11:49",
     "img_rel": "img/11.png"
   },
   {
@@ -42,11 +44,12 @@
     "text": "El junior que usa IA todos los días ya le gana al senior que no la toca.\n\nNo es apocalipsis de empleos. Es apocalipsis de skills.",
     "image": "/workspace/x-posts/img/03.png",
     "image_downloads": "/home/box/Downloads/x-posts/03.png",
-    "status": "pending",
+    "status": "hold",
+    "note": "En espera: tono con filo negativo, Andrés decide reescribir o sacar",
     "img_rel": "img/03.png"
   },
   {
-    "when": "2026-09-03 14:00",
+    "when": "2026-09-03 12:30",
     "n": 12,
     "src": "Pichai",
     "url": "https://x.com/sundarpichai/status/2095184464800526655",
@@ -57,7 +60,7 @@
     "img_rel": "img/12.png"
   },
   {
-    "when": "2026-09-03 15:30",
+    "when": "2026-09-03 14:00",
     "n": 15,
     "src": "Claude",
     "url": "https://x.com/claudeai/status/2095226833293685100",
@@ -68,7 +71,7 @@
     "img_rel": "img/15.png"
   },
   {
-    "when": "2026-09-03 17:00",
+    "when": "2026-09-03 15:30",
     "n": 13,
     "src": "Pichai",
     "url": "https://x.com/sundarpichai/status/2095184464800526655",
@@ -79,7 +82,7 @@
     "img_rel": "img/13.png"
   },
   {
-    "when": "2026-09-03 18:30",
+    "when": "2026-09-03 17:00",
     "n": 16,
     "src": "Claude",
     "url": "https://x.com/claudeai/status/2095226833293685100",
@@ -90,7 +93,7 @@
     "img_rel": "img/16.png"
   },
   {
-    "when": "2026-09-03 20:00",
+    "when": "2026-09-03 18:30",
     "n": 10,
     "src": "Diamandis",
     "url": "https://x.com/peterdiamandis/status/2095169837777469701",
@@ -101,7 +104,7 @@
     "img_rel": "img/10.png"
   },
   {
-    "when": "2026-09-03 21:30",
+    "when": "2026-09-03 20:00",
     "n": 2,
     "src": "Diamandis",
     "url": "https://x.com/peterdiamandis/status/2095169837777469701",
@@ -112,7 +115,7 @@
     "img_rel": "img/02.png"
   },
   {
-    "when": "2026-09-04 08:00",
+    "when": "2026-09-03 21:30",
     "n": 4,
     "src": "Diamandis",
     "url": "https://x.com/peterdiamandis/status/2095169837777469701",
@@ -123,7 +126,7 @@
     "img_rel": "img/04.png"
   },
   {
-    "when": "2026-09-04 09:30",
+    "when": "2026-09-04 08:00",
     "n": 5,
     "src": "Diamandis",
     "url": "https://x.com/peterdiamandis/status/2095169837777469701",
@@ -134,7 +137,7 @@
     "img_rel": "img/05.png"
   },
   {
-    "when": "2026-09-04 11:00",
+    "when": "2026-09-04 09:30",
     "n": 6,
     "src": "Diamandis",
     "url": "https://x.com/peterdiamandis/status/2095169837777469701",
@@ -145,7 +148,7 @@
     "img_rel": "img/06.png"
   },
   {
-    "when": "2026-09-04 12:30",
+    "when": "2026-09-04 11:00",
     "n": 8,
     "src": "Diamandis",
     "url": "https://x.com/peterdiamandis/status/2095169837777469701",
@@ -163,7 +166,8 @@
     "text": "Le tienen miedo a la IA los que no la han usado lo suficiente.",
     "image": "/workspace/x-posts/img/09.png",
     "image_downloads": "/home/box/Downloads/x-posts/09.png",
-    "status": "pending",
+    "status": "hold",
+    "note": "En espera: tono con filo negativo, Andrés decide reescribir o sacar",
     "img_rel": "img/09.png"
   }
 ]
