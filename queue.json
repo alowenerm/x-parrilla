@@ -191,5 +191,38 @@
     "status": "hold",
     "note": "En espera: tono con filo negativo, Andrés decide reescribir o sacar",
     "img_rel": "img/09.png"
+  },
+  {
+    "when": "2026-09-04 20:00",
+    "n": 17,
+    "src": "DeepMind",
+    "url": "https://x.com/googledeepmind/status/2095528012791902536",
+    "text": "Ya no perfeccionan el modelo físico del clima.\nLo saltan.\n\nWeatherNext 3 aprende del satélite y las estaciones. Predice sin una ecuación que “explique” la atmósfera.",
+    "image": "/workspace/x-posts/img/17.png",
+    "image_downloads": "/home/box/Downloads/x-posts/17.png",
+    "status": "pending",
+    "img_rel": "img/17.png"
+  },
+  {
+    "when": "2026-09-04 21:30",
+    "n": 18,
+    "src": "DeepMind",
+    "url": "https://x.com/googledeepmind/status/2095528012791902536",
+    "text": "Antes: supercomputador que simula la física… con 6 horas de atraso.\nAhora: red que mira satélite en vivo y pronostica cada hora.\n\nEl salto no es más potencia. Es dejar de pedirle al modelo que “entienda” el mundo.",
+    "image": "/workspace/x-posts/img/18.png",
+    "image_downloads": "/home/box/Downloads/x-posts/18.png",
+    "status": "pending",
+    "img_rel": "img/18.png"
+  },
+  {
+    "when": "2026-09-05 08:00",
+    "n": 19,
+    "src": "DeepMind",
+    "url": "https://x.com/googledeepmind/status/2095528012791902536",
+    "text": "Misma lógica en el clima y en la empresa: dejar el modelo que explica el mundo… y entrenar con lo que realmente pasa.\n\nWeatherNext 3 predice sin física explícita. Solo observación.",
+    "image": "/workspace/x-posts/img/19.png",
+    "image_downloads": "/home/box/Downloads/x-posts/19.png",
+    "status": "pending",
+    "img_rel": "img/19.png"
   }
 ]
