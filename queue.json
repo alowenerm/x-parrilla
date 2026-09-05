@@ -166,10 +166,11 @@
     "kind": "post",
     "src": "Claude",
     "url": "",
-    "text": "El copiloto se acaba de convertir en operador.\n\nSale del chat. Entra al escritorio. Ahí cambia el proceso.",
+    "text": "Claude ya puede usar tu computador en segundo plano: hace click, escribe, abre apps.\n\nEl copiloto se convierte en operador.\nSale del chat. Entra al escritorio. Ahí cambia el proceso.",
     "image": "/workspace/x-posts/img/111.png",
     "image_downloads": "/home/box/Downloads/x-posts/111.png",
     "status": "pending",
+    "note": "Ajustado por comentario Andrés: más contexto de la noticia",
     "img_rel": "img/111.png"
   },
   {
