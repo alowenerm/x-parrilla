@@ -110,7 +110,7 @@ def main():
             print('borrada imagen huérfana', f.name)
 
     pend = sorted([i for i in q if i.get('status') in ('pending','hold')], key=lambda i: i['when'])
-    post = sorted([i for i in q if i.get('status') == 'posted'], key=lambda i: i['when'], reverse=True)
+    post = sorted([i for i in q if i.get('status') == 'posted'], key=lambda i: i['when'], reverse=True)  # deleted omitted
 
     def col(items, empty):
         return '\n\n'.join(card(i) for i in items) if items else f'    <p class="empty">{empty}</p>'
