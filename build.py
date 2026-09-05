@@ -109,7 +109,7 @@ def main():
             f.unlink()
             print('borrada imagen huérfana', f.name)
 
-    pend = sorted([i for i in q if i.get('status') != 'posted'], key=lambda i: i['when'])
+    pend = sorted([i for i in q if i.get('status') in ('pending','hold')], key=lambda i: i['when'])
     post = sorted([i for i in q if i.get('status') == 'posted'], key=lambda i: i['when'], reverse=True)
 
     def col(items, empty):
