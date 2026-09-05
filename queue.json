@@ -226,7 +226,8 @@
     "text": "Misma lógica en el clima y en la empresa: dejar el modelo que explica el mundo… y entrenar con lo que realmente pasa.\n\nWeatherNext 3 predice sin física explícita. Solo observación.",
     "image": "/workspace/x-posts/img/19.png",
     "image_downloads": "/home/box/Downloads/x-posts/19.png",
-    "status": "pending",
+    "status": "hold",
+    "note": "Pausado: formato QT+imagen genera ruido; replantear estrategia viral",
     "img_rel": "img/19.png"
   },
   {
@@ -237,9 +238,10 @@
     "text": "Las empresas frontera usan 8,3× más IA por persona que el resto.\nMisma herramienta. Distinta profundidad.\n\nEl salto no es el modelo. Es pasarlo de asistente a ejecución.",
     "image": "/workspace/x-posts/img/20.png",
     "image_downloads": "/home/box/Downloads/x-posts/20.png",
-    "status": "pending",
+    "status": "hold",
     "type": "article",
     "layout": "session",
+    "note": "Pausado: formato QT+imagen genera ruido; replantear estrategia viral",
     "img_rel": "img/20.png"
   },
   {
@@ -250,9 +252,10 @@
     "text": "En enterprise, Codex ya genera el 64% de los tokens frente a ChatGPT.\n\nLa gente dejó de preguntar. Empezó a delegar el trabajo de verdad.",
     "image": "/workspace/x-posts/img/21.png",
     "image_downloads": "/home/box/Downloads/x-posts/21.png",
-    "status": "pending",
+    "status": "hold",
     "type": "article",
     "layout": "man page",
+    "note": "Pausado: formato QT+imagen genera ruido; replantear estrategia viral",
     "img_rel": "img/21.png"
   },
   {
@@ -263,9 +266,10 @@
     "text": "Desde febrero: agentes ×108 en legal, ×41 en ventas y recruiting.\n\nLa ingeniería abrió la puerta. El resto del negocio ya entró.",
     "image": "/workspace/x-posts/img/22.png",
     "image_downloads": "/home/box/Downloads/x-posts/22.png",
-    "status": "pending",
+    "status": "hold",
     "type": "article",
     "layout": "tmux split",
+    "note": "Pausado: formato QT+imagen genera ruido; replantear estrategia viral",
     "img_rel": "img/22.png"
   },
   {
@@ -276,9 +280,10 @@
     "text": "Microsoft rearmó su estándar de IA responsable para agentes: identidad, permisos, memoria y monitoreo en runtime.\n\nGobernar el modelo ya no alcanza. Hay que gobernar lo que hace.",
     "image": "/workspace/x-posts/img/23.png",
     "image_downloads": "/home/box/Downloads/x-posts/23.png",
-    "status": "pending",
+    "status": "hold",
     "type": "article",
     "layout": "vim status",
+    "note": "Pausado: formato QT+imagen genera ruido; replantear estrategia viral",
     "img_rel": "img/23.png"
   },
   {
@@ -289,9 +294,10 @@
     "text": "Antes de escalar agentes: define la ficha del cargo.\nQué herramientas toca. Qué datos ve. Quién es el dueño humano.\n\nAhí empieza a escalar con confianza.",
     "image": "/workspace/x-posts/img/24.png",
     "image_downloads": "/home/box/Downloads/x-posts/24.png",
-    "status": "pending",
+    "status": "hold",
     "type": "article",
     "layout": "hex dump",
+    "note": "Pausado: formato QT+imagen genera ruido; replantear estrategia viral",
     "img_rel": "img/24.png"
   },
   {
@@ -302,9 +308,10 @@
     "text": "NVIDIA saca NemoClaw: agentes autónomos con sandbox, políticas y privacidad de fábrica.\n\nEn la empresa tradicional el agente escala cuando el control llega con él.",
     "image": "/workspace/x-posts/img/25.png",
     "image_downloads": "/home/box/Downloads/x-posts/25.png",
-    "status": "pending",
+    "status": "hold",
     "type": "article",
     "layout": "BBS top bar",
+    "note": "Pausado: formato QT+imagen genera ruido; replantear estrategia viral",
     "img_rel": "img/25.png"
   },
   {
@@ -315,9 +322,10 @@
     "text": "Los juniors usan más IA que los ejecutivos (dato, no encuesta).\n\nLa oportunidad: hacer visibles esos flujos y convertirlos en práctica compartida.",
     "image": "/workspace/x-posts/img/26.png",
     "image_downloads": "/home/box/Downloads/x-posts/26.png",
-    "status": "pending",
+    "status": "hold",
     "type": "article",
     "layout": "ASCII bar chart",
+    "note": "Pausado: formato QT+imagen genera ruido; replantear estrategia viral",
     "img_rel": "img/26.png"
   }
 ]
