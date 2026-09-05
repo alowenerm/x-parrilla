@@ -87,6 +87,9 @@
   .card.hold { box-shadow: 0 0 0 3px #e8a72e; }
   .card.hold .slot { color: #8a5b00; }
   .note { margin: 0; padding: 0 10px 8px; background: #fff; color: #8a5b00; font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+
+  .card.reply { box-shadow: 0 0 0 3px #6aa8ff; }
+  .card.reply .slot { color: #1a4a9e; }
 </style>
 </head>
 <body>
@@ -99,9 +102,115 @@
 </header>
 <main>
   <section class="parrilla">
-    <h2>Parrilla · por publicar (0)</h2>
+    <h2>Parrilla · por publicar (6)</h2>
     <div class="grid" id="pending">
-    <p class="empty">Nada en la parrilla.</p>
+    <article class="card" data-n="101" data-status="pending" data-kind="post" id="p101">
+      <header>
+        <span class="slot">Hoy · 11:00</span>
+        <span class="meta">#101 · propio</span>
+      </header>
+      <img src="img/101.png" alt="post 101">
+      <p class="copy">La IA barata no baja el costo del trabajo.<br>Baja el costo de *probar*.<br><br>Eso cambia quién puede innovar sin presupuesto de piloto.</p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="101">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="101">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="201" data-status="pending" data-kind="reply" id="p201">
+      <header>
+        <span class="slot">REPLY · Hoy · 11:30</span>
+        <span class="meta">#201 · @sama</span>
+      </header>
+      <p class="copy">El rollout importa menos que la gobernanza del acceso.<br>Primero dueño del proceso, después asiento Enterprise.<br>Si no, Astra acelera el desorden.</p>
+      <p class="cite"><a href="https://x.com/sama/status/2095973658867171733" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="201">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="201">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="202" data-status="pending" data-kind="reply" id="p202">
+      <header>
+        <span class="slot">REPLY · Hoy · 12:00</span>
+        <span class="meta">#202 · @OpenAI</span>
+      </header>
+      <p class="copy">El valor no es que “haga clic”.<br>Es qué clic le dejamos hacer.<br><br>El riesgo no es el modelo: es permiso sin dueño.</p>
+      <p class="cite"><a href="https://x.com/OpenAI/status/2095595741528125780" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="202">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="202">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="203" data-status="pending" data-kind="reply" id="p203">
+      <header>
+        <span class="slot">REPLY · Hoy · 12:30</span>
+        <span class="meta">#203 · @AndrewYNg</span>
+      </header>
+      <p class="copy">Steer el agente es la skill.<br>Eso se enseña en el flujo real, no en un curso suelto.<br><br>Quién sabe pedir, multiplica. Quién solo observa, se queda.</p>
+      <p class="cite"><a href="https://x.com/AndrewYNg/status/2095890279865721217" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="203">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="203">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="102" data-status="pending" data-kind="post" id="p102">
+      <header>
+        <span class="slot">Hoy · 14:00</span>
+        <span class="meta">#102 · propio</span>
+      </header>
+      <img src="img/102.png" alt="post 102">
+      <p class="copy">Un agente sin dueño no es autonomía.<br>Es deuda operativa con latencia.<br><br>Antes de escalar: nombre, permisos, qué puede romper.</p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="102">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="102">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card" data-n="103" data-status="pending" data-kind="post" id="p103">
+      <header>
+        <span class="slot">Hoy · 17:00</span>
+        <span class="meta">#103 · propio</span>
+      </header>
+      <img src="img/103.png" alt="post 103">
+      <p class="copy">El cuello de botella ya no es el modelo.<br>Es el proceso que todavía pide 7 firmas para un cambio de 10 minutos.<br><br>La transformación empieza donde el flujo se traba, no donde el demo brilla.</p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="103">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="103">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
     </div>
   </section>
   <section>

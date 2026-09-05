@@ -23,26 +23,39 @@ def slot_label(when):
 def body_html(text):
     return html.escape(text).replace('\n\n', '<br><br>').replace('\n', '<br>')
 
+def img_name(n):
+    return f"{n}.png"
+
 def card(item):
     n = item['n']
     posted = item.get('status') == 'posted'
-    img = item.get('img_rel') or f"img/{n:02d}.png"
+    kind = item.get('kind') or ('reply' if item.get('reply_to_url') else 'post')
     status = item.get('status', 'pending')
     hold = status == 'hold'
     slot = slot_label(item["when"])
     if hold:
         slot = 'EN ESPERA · ' + slot
-    parts = [f'    <article class="card{" hold" if hold else ""}" data-n="{n}" data-status="{status}" id="p{n}">',
+    if kind == 'reply':
+        slot = 'REPLY · ' + slot
+    meta = f"#{n} · {item.get('src') or kind}"
+    parts = [f'    <article class="card{" hold" if hold else ""}{" reply" if kind=="reply" else ""}" data-n="{n}" data-status="{status}" data-kind="{kind}" id="p{n}">',
              '      <header>',
              f'        <span class="slot">{html.escape(slot)}</span>',
-             f'        <span class="meta">#{n} · {html.escape(item["src"])}</span>',
-             '      </header>',
-             f'      <img src="{img}" alt="post {n}">',
-             f'      <p class="copy">{body_html(item["text"])}</p>']
-    cite = f'      <p class="cite"><a href="{html.escape(item["url"])}" target="_blank" rel="noopener">cita original</a></p>'
+             f'        <span class="meta">{html.escape(meta)}</span>',
+             '      </header>']
+    img = item.get('img_rel') or (f"img/{img_name(n)}" if item.get('image') else '')
+    if img and item.get('image'):
+        parts.append(f'      <img src="{img}" alt="post {n}">')
+    parts.append(f'      <p class="copy">{body_html(item["text"])}</p>')
+    cite = ''
+    target = item.get('reply_to_url') or item.get('url') or ''
+    if target:
+        label = 'reply a' if kind == 'reply' else 'fuente'
+        cite = f'      <p class="cite"><a href="{html.escape(target)}" target="_blank" rel="noopener">{label}</a></p>'
     if posted and item.get('posted_url'):
         cite += f'<p class="cite"><a href="{html.escape(item["posted_url"])}" target="_blank" rel="noopener">ver en X</a></p>'
-    parts.append(cite)
+    if cite:
+        parts.append(cite)
     if hold and item.get('note'):
         parts.append(f'      <p class="note">{html.escape(item["note"])}</p>')
     parts.append('      ')
@@ -51,7 +64,7 @@ def card(item):
                   f'        <button type="button" class="btn ghost" data-act="sacar" data-n="{n}">Sacar de la parrilla</button>',
                   '      </div>',
                   f'      <form class="comment" data-n="{n}">',
-                  '        <textarea name="c" rows="2" placeholder="Comentario para ajustar este post…"></textarea>',
+                  '        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>',
                   '        <button type="submit" class="btn">Enviar comentario</button>',
                   '      </form>']
     parts += ['      <p class="hint" hidden></p>', '    </article>']
@@ -92,13 +105,18 @@ document.querySelectorAll('form.comment').forEach(form => {
 def main():
     q = json.loads(SRC_Q.read_text(encoding='utf-8'))
     for item in q:
-        item['img_rel'] = f"img/{item['n']:02d}.png"
+        if item.get('image'):
+            item['img_rel'] = f"img/{item['n']}.png"
+        else:
+            item['img_rel'] = ''
     (BOARD / 'queue.json').write_text(json.dumps(q, ensure_ascii=False, indent=2), encoding='utf-8')
 
     (BOARD / 'img').mkdir(exist_ok=True)
     used = set()
     for item in q:
-        name = f"{item['n']:02d}.png"
+        if not item.get('image'):
+            continue
+        name = f"{item['n']}.png"
         used.add(name)
         dst = BOARD / 'img' / name
         src = SRC_IMG / name
