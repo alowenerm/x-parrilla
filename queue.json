@@ -143,7 +143,7 @@
     "img_rel": "img/107.png"
   },
   {
-    "when": "2026-09-06 08:00",
+    "when": "2026-09-06 11:00",
     "n": 108,
     "kind": "post",
     "src": "Diamandis",
@@ -155,7 +155,7 @@
     "img_rel": "img/108.png"
   },
   {
-    "when": "2026-09-06 09:30",
+    "when": "2026-09-06 18:00",
     "n": 109,
     "kind": "post",
     "src": "Diamandis",
@@ -167,7 +167,7 @@
     "img_rel": "img/109.png"
   },
   {
-    "when": "2026-09-06 11:00",
+    "when": "2026-09-07 11:00",
     "n": 110,
     "kind": "post",
     "src": "Pichai/cyber",
@@ -179,7 +179,7 @@
     "img_rel": "img/110.png"
   },
   {
-    "when": "2026-09-06 12:30",
+    "when": "2026-09-07 18:00",
     "n": 111,
     "kind": "post",
     "src": "Claude",
@@ -200,7 +200,8 @@
     "text": "Ya no perfeccionan el modelo físico del clima.\nLo saltan.\n\nAprende del satélite. Predice sin una ecuación que “explique” la atmósfera.",
     "image": "/workspace/x-posts/img/112.png",
     "image_downloads": "/home/box/Downloads/x-posts/112.png",
-    "status": "pending",
+    "status": "hold",
+    "note": "En espera: bajamos volumen por engagement bajo; liberar 1–2/día o sacar",
     "img_rel": "img/112.png"
   },
   {
@@ -212,7 +213,8 @@
     "text": "Las empresas frontera usan 8,3× más IA por persona.\nMisma herramienta. Distinta profundidad.\n\nEl salto es pasarlo de asistente a ejecución.",
     "image": "/workspace/x-posts/img/113.png",
     "image_downloads": "/home/box/Downloads/x-posts/113.png",
-    "status": "pending",
+    "status": "hold",
+    "note": "En espera: bajamos volumen por engagement bajo; liberar 1–2/día o sacar",
     "img_rel": "img/113.png"
   },
   {
@@ -224,7 +226,8 @@
     "text": "En enterprise, Codex ya genera más tokens que ChatGPT.\n\nLa gente dejó de preguntar. Empezó a delegar el trabajo de verdad.",
     "image": "/workspace/x-posts/img/114.png",
     "image_downloads": "/home/box/Downloads/x-posts/114.png",
-    "status": "pending",
+    "status": "hold",
+    "note": "En espera: bajamos volumen por engagement bajo; liberar 1–2/día o sacar",
     "img_rel": "img/114.png"
   },
   {
@@ -236,7 +239,8 @@
     "text": "Gobernar el modelo ya no alcanza.\nHay que gobernar lo que hace.\n\nIdentidad, permisos, memoria, monitoreo en runtime.",
     "image": "/workspace/x-posts/img/115.png",
     "image_downloads": "/home/box/Downloads/x-posts/115.png",
-    "status": "pending",
+    "status": "hold",
+    "note": "En espera: bajamos volumen por engagement bajo; liberar 1–2/día o sacar",
     "img_rel": "img/115.png"
   },
   {
@@ -248,7 +252,8 @@
     "text": "Antes de escalar agentes: define la ficha del cargo.\nQué herramientas toca. Qué datos ve. Quién es el dueño humano.",
     "image": "/workspace/x-posts/img/116.png",
     "image_downloads": "/home/box/Downloads/x-posts/116.png",
-    "status": "pending",
+    "status": "hold",
+    "note": "En espera: bajamos volumen por engagement bajo; liberar 1–2/día o sacar",
     "img_rel": "img/116.png"
   },
   {
@@ -260,7 +265,8 @@
     "text": "Agentes autónomos con sandbox y políticas de fábrica.\n\nEn la empresa el agente escala cuando el control llega con él.",
     "image": "/workspace/x-posts/img/117.png",
     "image_downloads": "/home/box/Downloads/x-posts/117.png",
-    "status": "pending",
+    "status": "hold",
+    "note": "En espera: bajamos volumen por engagement bajo; liberar 1–2/día o sacar",
     "img_rel": "img/117.png"
   }
 ]
