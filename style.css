@@ -83,3 +83,16 @@
 
   .card.reply { box-shadow: 0 0 0 3px #6aa8ff; }
   .card.reply .slot { color: #1a4a9e; }
+
+  nav.tabs {
+    display: flex; gap: 0; border-bottom: 2px solid #2ee86a;
+    background: #000; padding: 0 12px;
+  }
+  nav.tabs a.tab {
+    color: #9a9a9a; text-decoration: none;
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 12px 16px; border-bottom: 3px solid transparent; margin-bottom: -2px;
+  }
+  nav.tabs a.tab:hover { color: #2ee86a; }
+  nav.tabs a.tab.active { color: #2ee86a; border-bottom-color: #2ee86a; font-weight: 700; }

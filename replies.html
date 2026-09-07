@@ -3,115 +3,223 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Replies propuestas · @andres_lowener</title>
-<link rel="stylesheet" href="style.css">
+<title>Replies · @andres_lowener</title>
 <style>
-  body { margin:0; background:#0a0a0a; }
-  .wrap { max-width:720px; margin:0 auto; padding:16px; }
-  h1 { color:#2ee86a; font-family:ui-monospace,Menlo,monospace; font-size:14px; letter-spacing:.12em; }
-  .sub { color:#9a9a9a; font-size:13px; margin-bottom:16px; }
-  .grid { display:flex; flex-direction:column; gap:14px; }
-  a.back { color:#2ee86a; font-size:12px; }
+  :root {
+    --bg: #0a0a0a;
+    --green: #2ee86a;
+    --ink: #111;
+    --muted: #555;
+    --line: #111;
+    --card: #fff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: #eee; font-family: ui-sans-serif, system-ui, sans-serif; }
+  header.top {
+    border-bottom: 2px solid var(--green);
+    padding: 12px 16px;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    background: #000;
+  }
+  h1 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 0; color: var(--green); font-family: ui-monospace, Menlo, monospace; }
+  .sub { font-size: 12px; color: #9a9a9a; }
+  main { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  section { padding: 12px; background: #111; }
+  section.parrilla { border-right: 2px solid #000; background: #161616; }
+  h2 { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--green); margin: 0 0 10px; font-family: ui-monospace, Menlo, monospace; }
+  .grid { display: flex; flex-direction: column; gap: 14px; }
+  .card {
+    background: var(--card);
+    color: var(--ink);
+    border: 2px solid #000;
+    box-shadow: 0 0 0 3px var(--green);
+    padding: 0;
+    overflow: hidden;
+  }
+  .card header {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; font-weight: 700; letter-spacing: .04em;
+    margin: 0; padding: 8px 10px;
+    background: #fff; color: #111;
+    border-bottom: 1px solid #ddd;
+  }
+  .card .meta { color: #444; font-weight: 600; }
+  .card img {
+    width: 100%; height: auto; display: block;
+    background: #031a08;
+    border-top: 3px solid var(--green);
+    border-bottom: 3px solid var(--green);
+  }
+  .copy {
+    font-size: 13px; line-height: 1.35;
+    margin: 0; padding: 10px 10px 6px;
+    color: #111; background: #fff;
+  }
+  .cite { margin: 0; padding: 0 10px 8px; background: #fff; }
+  .cite a { color: #111; font-size: 11px; font-weight: 600; }
+  .actions { margin: 0; padding: 0 10px 8px; background: #fff; }
+  .btn {
+    background: #fff; color: #111; border: 2px solid #111;
+    font-family: inherit; font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    padding: 5px 8px; cursor: pointer; font-weight: 700;
+  }
+  .btn.ghost { border-color: #111; color: #111; }
+  .btn:hover { background: #111; color: #fff; }
+  textarea {
+    width: 100%; background: #fff; color: #111; border: 2px solid #111;
+    font-family: inherit; font-size: 12px; padding: 6px; resize: vertical;
+  }
+  .comment { display: flex; flex-direction: column; gap: 6px; padding: 0 10px 10px; background: #fff; margin: 0; }
+  .hint { font-size: 11px; color: #111; margin: 0; padding: 0 10px 10px; background: #fff; }
+  .empty { color: #888; font-size: 13px; }
+  .card.out { opacity: .45; }
+  .card.out::after { content: "SACADO"; display: block; font-size: 11px; letter-spacing: .2em; padding: 6px 10px; background: #fff; color: #111; font-weight: 700; }
+
+  .card { display: flex; flex-direction: column; }
+  .card img { order: -1; border-top: none; }
+  .card header {
+    order: 0;
+    border-bottom: none;
+    border-top: 1px solid #e3e3e3;
+  }
+
+  .card.hold { box-shadow: 0 0 0 3px #e8a72e; }
+  .card.hold .slot { color: #8a5b00; }
+  .note { margin: 0; padding: 0 10px 8px; background: #fff; color: #8a5b00; font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+
+  .card.reply { box-shadow: 0 0 0 3px #6aa8ff; }
+  .card.reply .slot { color: #1a4a9e; }
+
+  nav.tabs {
+    display: flex; gap: 0; border-bottom: 2px solid #2ee86a;
+    background: #000; padding: 0 12px;
+  }
+  nav.tabs a.tab {
+    color: #9a9a9a; text-decoration: none;
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 12px 16px; border-bottom: 3px solid transparent; margin-bottom: -2px;
+  }
+  nav.tabs a.tab:hover { color: #2ee86a; }
+  nav.tabs a.tab.active { color: #2ee86a; border-bottom-color: #2ee86a; font-weight: 700; }
+
+
+  nav.tabs {
+    display: flex; gap: 0; border-bottom: 2px solid #2ee86a;
+    background: #000; padding: 0 12px;
+  }
+  nav.tabs a.tab {
+    color: #9a9a9a; text-decoration: none;
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 12px 16px; border-bottom: 3px solid transparent; margin-bottom: -2px;
+  }
+  nav.tabs a.tab:hover { color: #2ee86a; }
+  nav.tabs a.tab.active { color: #2ee86a; border-bottom-color: #2ee86a; font-weight: 700; }
+
+  .wrap-pad { padding: 12px; background: #161616; }
+  .grid { display: flex; flex-direction: column; gap: 14px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <a class="back" href="./">← parrilla</a>
-  <h1>andres@x:~$ replies</h1>
-  <p class="sub">10 propuestas a cuentas medianas · marca sí/no en el chat</p>
-  <div class="grid">
+<header class="top">
+  <div>
+    <h1>andres@x:~$ replies</h1>
+    <div class="sub">@andres_lowener · cuentas medianas · Santiago</div>
+  </div>
+  <div class="sub">R1–R10 en cola. Sacar: escribe en el chat.</div>
+</header>
 
-    <article class="card reply" id="R1">
+<nav class="tabs">
+  <a class="tab " href="./">Parrilla</a>
+  <a class="tab active" href="replies.html">Replies</a>
+</nav>
+
+<section class="wrap-pad">
+  <h2>Replies · por publicar (10)</h2>
+  <div class="grid">
+    <article class="card reply" data-status="pending" id="R1">
       <header>
-        <span class="slot">R1</span>
-        <span class="meta">@every · ~55k</span>
+        <span class="slot">08:30 · pending</span>
+        <span class="meta">#301 · @every · ~55k</span>
       </header>
       <p class="copy">Compartir workflows no basta. Hay que nombrar dueño, estándar y qué se mide.<br>Sin eso, “adopción” es gente probando sola.</p>
-      <p class="cite"><a href="https://x.com/every/status/2095860468904763588" target="_blank" rel="noopener">ver post original · leveling up company AI</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R1 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/every/status/2095860468904763588" target="_blank" rel="noopener">post original · leveling up company AI</a></p>
     </article>
-    <article class="card reply" id="R2">
+    <article class="card reply" data-status="pending" id="R2">
       <header>
-        <span class="slot">R2</span>
-        <span class="meta">@natebjones · ~8k</span>
+        <span class="slot">09:00 · pending</span>
+        <span class="meta">#302 · @natebjones · ~8k</span>
       </header>
       <p class="copy">Menos instrucciones suele ser más robusto.<br>En empresa el harness gordo es deuda: nadie lo mantiene y el agente improvisa.</p>
-      <p class="cite"><a href="https://x.com/natebjones/status/2096387700303753570" target="_blank" rel="noopener">ver post original · harness más liviano</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R2 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/natebjones/status/2096387700303753570" target="_blank" rel="noopener">post original · harness más liviano</a></p>
     </article>
-    <article class="card reply" id="R3">
+    <article class="card reply" data-status="pending" id="R3">
       <header>
-        <span class="slot">R3</span>
-        <span class="meta">@alliekmiller · ~109k</span>
+        <span class="slot">09:30 · pending</span>
+        <span class="meta">#303 · @alliekmiller · ~109k</span>
       </header>
       <p class="copy">Falta la 5ª en empresa: permisos.<br>Thing + tools + memory + share… y quién puede romper qué.</p>
-      <p class="cite"><a href="https://x.com/alliekmiller/status/2095948761604427925" target="_blank" rel="noopener">ver post original · 4 piezas core de AI</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R3 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/alliekmiller/status/2095948761604427925" target="_blank" rel="noopener">post original · 4 piezas core de AI</a></p>
     </article>
-    <article class="card reply" id="R4">
+    <article class="card reply" data-status="pending" id="R4">
       <header>
-        <span class="slot">R4</span>
-        <span class="meta">@bentossell · ~200k</span>
+        <span class="slot">12:00 · pending</span>
+        <span class="meta">#304 · @bentossell · ~200k</span>
       </header>
       <p class="copy">Lo útil no es que “note” trabajo extra.<br>Es si puede hacerlo sin approval. Autonomía sin bitácora es riesgo con cara amable.</p>
-      <p class="cite"><a href="https://x.com/bentossell/status/2096200500827873721" target="_blank" rel="noopener">ver post original · Astra toma el thread</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R4 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/bentossell/status/2096200500827873721" target="_blank" rel="noopener">post original · Astra toma el thread</a></p>
     </article>
-    <article class="card reply" id="R5">
+    <article class="card reply" data-status="pending" id="R5">
       <header>
-        <span class="slot">R5</span>
-        <span class="meta">@testingcatalog · ~75k</span>
+        <span class="slot">12:30 · pending</span>
+        <span class="meta">#305 · @testingcatalog · ~75k</span>
       </header>
       <p class="copy">MCP a datos internos es potencia.<br>El proyecto real: identidad del agente y qué sistemas puede tocar.</p>
-      <p class="cite"><a href="https://x.com/testingcatalog/status/2096357644491456542" target="_blank" rel="noopener">ver post original · Gemini Business + MCP</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R5 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/testingcatalog/status/2096357644491456542" target="_blank" rel="noopener">post original · Gemini Business + MCP</a></p>
     </article>
-    <article class="card reply" id="R6">
+    <article class="card reply" data-status="pending" id="R6">
       <header>
-        <span class="slot">R6</span>
-        <span class="meta">@rohanpaul_ai · ~156k</span>
+        <span class="slot">14:00 · pending</span>
+        <span class="meta">#306 · @rohanpaul_ai · ~156k</span>
       </header>
       <p class="copy">El desperdicio no es cómputo. Es conocimiento que la empresa ya tiene y no empaqueta.<br>Skills = SOPs vivos. Ahí está el ROI.</p>
-      <p class="cite"><a href="https://x.com/rohanpaul_ai/status/2096406594460487716" target="_blank" rel="noopener">ver post original · agents rediscovering vs skills</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R6 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/rohanpaul_ai/status/2096406594460487716" target="_blank" rel="noopener">post original · agents rediscovering vs skills</a></p>
     </article>
-    <article class="card reply" id="R7">
+    <article class="card reply" data-status="pending" id="R7">
       <header>
-        <span class="slot">R7</span>
-        <span class="meta">@TheTuringPost · ~87k</span>
+        <span class="slot">15:00 · pending</span>
+        <span class="meta">#307 · @TheTuringPost · ~87k</span>
       </header>
       <p class="copy">Enseñar al agente a operar software es el salto.<br>Falta versionar y evaluar el skill antes de soltarlo a producción.</p>
-      <p class="cite"><a href="https://x.com/TheTuringPost/status/2096240393117692157" target="_blank" rel="noopener">ver post original · AREX-Skill / repos → skills</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R7 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/TheTuringPost/status/2096240393117692157" target="_blank" rel="noopener">post original · AREX-Skill / repos → skills</a></p>
     </article>
-    <article class="card reply" id="R8">
+    <article class="card reply" data-status="pending" id="R8">
       <header>
-        <span class="slot">R8</span>
-        <span class="meta">@gitlab · ~172k</span>
+        <span class="slot">15:30 · pending</span>
+        <span class="meta">#308 · @gitlab · ~172k</span>
       </header>
       <p class="copy">No todo caso merece el modelo caro.<br>Un funnel por riesgo es transformación de verdad: costo, latencia y control en la misma decisión.</p>
-      <p class="cite"><a href="https://x.com/gitlab/status/2095967891795456083" target="_blank" rel="noopener">ver post original · tiered models for security ops</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R8 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/gitlab/status/2095967891795456083" target="_blank" rel="noopener">post original · tiered models for security ops</a></p>
     </article>
-    <article class="card reply" id="R9">
+    <article class="card reply" data-status="pending" id="R9">
       <header>
-        <span class="slot">R9</span>
-        <span class="meta">@zapier · ~96k</span>
+        <span class="slot">17:00 · pending</span>
+        <span class="meta">#309 · @zapier · ~96k</span>
       </header>
       <p class="copy">Casar modelo con proceso es el trabajo.<br>Finance approvals ≠ sales follow-ups. El portfolio se diseña; no se improvisa.</p>
-      <p class="cite"><a href="https://x.com/zapier/status/2095897528818364684" target="_blank" rel="noopener">ver post original · which model for which workflow</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R9 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/zapier/status/2095897528818364684" target="_blank" rel="noopener">post original · which model for which workflow</a></p>
     </article>
-    <article class="card reply" id="R10">
+    <article class="card reply" data-status="pending" id="R10">
       <header>
-        <span class="slot">R10</span>
-        <span class="meta">@dbreunig · ~10k</span>
+        <span class="slot">20:00 · pending</span>
+        <span class="meta">#310 · @dbreunig · ~10k</span>
       </header>
       <p class="copy">Persistencia sin criterio de parada es bucle caro.<br>En ops: cuándo insiste, cuándo escala a humano, cuándo cierra.</p>
-      <p class="cite"><a href="https://x.com/dbreunig/status/2095915919201718315" target="_blank" rel="noopener">ver post original · persistent agents / give up early</a></p>
-      <p class="hint">Para aprobar: escribe en el chat "R10 sí" o "todas".</p>
+      <p class="cite"><a href="https://x.com/dbreunig/status/2095915919201718315" target="_blank" rel="noopener">post original · persistent agents / give up early</a></p>
     </article>
   </div>
-</div>
+</section>
 </body>
 </html>

@@ -90,6 +90,19 @@
 
   .card.reply { box-shadow: 0 0 0 3px #6aa8ff; }
   .card.reply .slot { color: #1a4a9e; }
+
+  nav.tabs {
+    display: flex; gap: 0; border-bottom: 2px solid #2ee86a;
+    background: #000; padding: 0 12px;
+  }
+  nav.tabs a.tab {
+    color: #9a9a9a; text-decoration: none;
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 12px 16px; border-bottom: 3px solid transparent; margin-bottom: -2px;
+  }
+  nav.tabs a.tab:hover { color: #2ee86a; }
+  nav.tabs a.tab.active { color: #2ee86a; border-bottom-color: #2ee86a; font-weight: 700; }
 </style>
 </head>
 <body>
@@ -102,11 +115,11 @@
 </header>
 <main>
   <section class="parrilla">
-    <h2>Parrilla · por publicar (8)</h2>
+    <h2>Parrilla · por publicar (18)</h2>
     <div class="grid" id="pending">
     <article class="card hold" data-n="112" data-status="hold" data-kind="post" id="p112">
       <header>
-        <span class="slot">EN ESPERA · Hoy · 14:00</span>
+        <span class="slot">EN ESPERA · Ayer · 14:00</span>
         <span class="meta">#112 · DeepMind</span>
       </header>
       <img src="img/112.png" alt="post 112">
@@ -125,7 +138,7 @@
 
     <article class="card hold" data-n="113" data-status="hold" data-kind="post" id="p113">
       <header>
-        <span class="slot">EN ESPERA · Hoy · 15:30</span>
+        <span class="slot">EN ESPERA · Ayer · 15:30</span>
         <span class="meta">#113 · OpenAI</span>
       </header>
       <img src="img/113.png" alt="post 113">
@@ -144,7 +157,7 @@
 
     <article class="card hold" data-n="114" data-status="hold" data-kind="post" id="p114">
       <header>
-        <span class="slot">EN ESPERA · Hoy · 17:00</span>
+        <span class="slot">EN ESPERA · Ayer · 17:00</span>
         <span class="meta">#114 · OpenAI</span>
       </header>
       <img src="img/114.png" alt="post 114">
@@ -163,7 +176,7 @@
 
     <article class="card hold" data-n="115" data-status="hold" data-kind="post" id="p115">
       <header>
-        <span class="slot">EN ESPERA · Hoy · 18:30</span>
+        <span class="slot">EN ESPERA · Ayer · 18:30</span>
         <span class="meta">#115 · Microsoft</span>
       </header>
       <img src="img/115.png" alt="post 115">
@@ -182,7 +195,7 @@
 
     <article class="card hold" data-n="116" data-status="hold" data-kind="post" id="p116">
       <header>
-        <span class="slot">EN ESPERA · Hoy · 20:00</span>
+        <span class="slot">EN ESPERA · Ayer · 20:00</span>
         <span class="meta">#116 · Forbes</span>
       </header>
       <img src="img/116.png" alt="post 116">
@@ -201,7 +214,7 @@
 
     <article class="card hold" data-n="117" data-status="hold" data-kind="post" id="p117">
       <header>
-        <span class="slot">EN ESPERA · Hoy · 21:30</span>
+        <span class="slot">EN ESPERA · Ayer · 21:30</span>
         <span class="meta">#117 · NVIDIA</span>
       </header>
       <img src="img/117.png" alt="post 117">
@@ -218,9 +231,63 @@
       <p class="hint" hidden></p>
     </article>
 
+    <article class="card reply" data-n="301" data-status="pending" data-kind="reply" id="p301">
+      <header>
+        <span class="slot">REPLY · Hoy · 08:30</span>
+        <span class="meta">#301 · @every</span>
+      </header>
+      <p class="copy">Compartir workflows no basta. Hay que nombrar dueño, estándar y qué se mide.<br>Sin eso, “adopción” es gente probando sola.</p>
+      <p class="cite"><a href="https://x.com/every/status/2095860468904763588" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="301">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="301">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="302" data-status="pending" data-kind="reply" id="p302">
+      <header>
+        <span class="slot">REPLY · Hoy · 09:00</span>
+        <span class="meta">#302 · @natebjones</span>
+      </header>
+      <p class="copy">Menos instrucciones suele ser más robusto.<br>En empresa el harness gordo es deuda: nadie lo mantiene y el agente improvisa.</p>
+      <p class="cite"><a href="https://x.com/natebjones/status/2096387700303753570" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="302">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="302">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="303" data-status="pending" data-kind="reply" id="p303">
+      <header>
+        <span class="slot">REPLY · Hoy · 09:30</span>
+        <span class="meta">#303 · @alliekmiller</span>
+      </header>
+      <p class="copy">Falta la 5ª en empresa: permisos.<br>Thing + tools + memory + share… y quién puede romper qué.</p>
+      <p class="cite"><a href="https://x.com/alliekmiller/status/2095948761604427925" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="303">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="303">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
     <article class="card" data-n="110" data-status="pending" data-kind="post" id="p110">
       <header>
-        <span class="slot">Mañana · 11:00</span>
+        <span class="slot">Hoy · 11:00</span>
         <span class="meta">#110 · Pichai/cyber</span>
       </header>
       <img src="img/110.png" alt="post 110">
@@ -236,9 +303,117 @@
       <p class="hint" hidden></p>
     </article>
 
+    <article class="card reply" data-n="304" data-status="pending" data-kind="reply" id="p304">
+      <header>
+        <span class="slot">REPLY · Hoy · 12:00</span>
+        <span class="meta">#304 · @bentossell</span>
+      </header>
+      <p class="copy">Lo útil no es que “note” trabajo extra.<br>Es si puede hacerlo sin approval. Autonomía sin bitácora es riesgo con cara amable.</p>
+      <p class="cite"><a href="https://x.com/bentossell/status/2096200500827873721" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="304">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="304">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="305" data-status="pending" data-kind="reply" id="p305">
+      <header>
+        <span class="slot">REPLY · Hoy · 12:30</span>
+        <span class="meta">#305 · @testingcatalog</span>
+      </header>
+      <p class="copy">MCP a datos internos es potencia.<br>El proyecto real: identidad del agente y qué sistemas puede tocar.</p>
+      <p class="cite"><a href="https://x.com/testingcatalog/status/2096357644491456542" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="305">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="305">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="306" data-status="pending" data-kind="reply" id="p306">
+      <header>
+        <span class="slot">REPLY · Hoy · 14:00</span>
+        <span class="meta">#306 · @rohanpaul_ai</span>
+      </header>
+      <p class="copy">El desperdicio no es cómputo. Es conocimiento que la empresa ya tiene y no empaqueta.<br>Skills = SOPs vivos. Ahí está el ROI.</p>
+      <p class="cite"><a href="https://x.com/rohanpaul_ai/status/2096406594460487716" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="306">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="306">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="307" data-status="pending" data-kind="reply" id="p307">
+      <header>
+        <span class="slot">REPLY · Hoy · 15:00</span>
+        <span class="meta">#307 · @TheTuringPost</span>
+      </header>
+      <p class="copy">Enseñar al agente a operar software es el salto.<br>Falta versionar y evaluar el skill antes de soltarlo a producción.</p>
+      <p class="cite"><a href="https://x.com/TheTuringPost/status/2096240393117692157" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="307">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="307">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="308" data-status="pending" data-kind="reply" id="p308">
+      <header>
+        <span class="slot">REPLY · Hoy · 15:30</span>
+        <span class="meta">#308 · @gitlab</span>
+      </header>
+      <p class="copy">No todo caso merece el modelo caro.<br>Un funnel por riesgo es transformación de verdad: costo, latencia y control en la misma decisión.</p>
+      <p class="cite"><a href="https://x.com/gitlab/status/2095967891795456083" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="308">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="308">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
+    <article class="card reply" data-n="309" data-status="pending" data-kind="reply" id="p309">
+      <header>
+        <span class="slot">REPLY · Hoy · 17:00</span>
+        <span class="meta">#309 · @zapier</span>
+      </header>
+      <p class="copy">Casar modelo con proceso es el trabajo.<br>Finance approvals ≠ sales follow-ups. El portfolio se diseña; no se improvisa.</p>
+      <p class="cite"><a href="https://x.com/zapier/status/2095897528818364684" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="309">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="309">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
+
     <article class="card" data-n="111" data-status="pending" data-kind="post" id="p111">
       <header>
-        <span class="slot">Mañana · 18:00</span>
+        <span class="slot">Hoy · 18:00</span>
         <span class="meta">#111 · Claude</span>
       </header>
       <img src="img/111.png" alt="post 111">
@@ -253,6 +428,24 @@
       </form>
       <p class="hint" hidden></p>
     </article>
+
+    <article class="card reply" data-n="310" data-status="pending" data-kind="reply" id="p310">
+      <header>
+        <span class="slot">REPLY · Hoy · 20:00</span>
+        <span class="meta">#310 · @dbreunig</span>
+      </header>
+      <p class="copy">Persistencia sin criterio de parada es bucle caro.<br>En ops: cuándo insiste, cuándo escala a humano, cuándo cierra.</p>
+      <p class="cite"><a href="https://x.com/dbreunig/status/2095915919201718315" target="_blank" rel="noopener">reply a</a></p>
+      
+      <div class="actions">
+        <button type="button" class="btn ghost" data-act="sacar" data-n="310">Sacar de la parrilla</button>
+      </div>
+      <form class="comment" data-n="310">
+        <textarea name="c" rows="2" placeholder="Comentario para ajustar…"></textarea>
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+      <p class="hint" hidden></p>
+    </article>
     </div>
   </section>
   <section>
@@ -260,7 +453,7 @@
     <div class="grid" id="posted">
     <article class="card" data-n="109" data-status="posted" data-kind="post" id="p109">
       <header>
-        <span class="slot">Hoy · 18:00</span>
+        <span class="slot">Ayer · 18:00</span>
         <span class="meta">#109 · Diamandis</span>
       </header>
       <img src="img/109.png" alt="post 109">
@@ -272,7 +465,7 @@
 
     <article class="card" data-n="108" data-status="posted" data-kind="post" id="p108">
       <header>
-        <span class="slot">Hoy · 11:00</span>
+        <span class="slot">Ayer · 11:00</span>
         <span class="meta">#108 · Diamandis</span>
       </header>
       <img src="img/108.png" alt="post 108">
@@ -284,7 +477,7 @@
 
     <article class="card" data-n="107" data-status="posted" data-kind="post" id="p107">
       <header>
-        <span class="slot">Ayer · 21:30</span>
+        <span class="slot">05/09 · 21:30</span>
         <span class="meta">#107 · Diamandis</span>
       </header>
       <img src="img/107.png" alt="post 107">
@@ -296,7 +489,7 @@
 
     <article class="card" data-n="106" data-status="posted" data-kind="post" id="p106">
       <header>
-        <span class="slot">Ayer · 20:00</span>
+        <span class="slot">05/09 · 20:00</span>
         <span class="meta">#106 · Diamandis</span>
       </header>
       <img src="img/106.png" alt="post 106">
@@ -308,7 +501,7 @@
 
     <article class="card" data-n="105" data-status="posted" data-kind="post" id="p105">
       <header>
-        <span class="slot">Ayer · 18:30</span>
+        <span class="slot">05/09 · 18:30</span>
         <span class="meta">#105 · Diamandis</span>
       </header>
       <img src="img/105.png" alt="post 105">
@@ -320,7 +513,7 @@
 
     <article class="card" data-n="103" data-status="posted" data-kind="post" id="p103">
       <header>
-        <span class="slot">Ayer · 17:00</span>
+        <span class="slot">05/09 · 17:00</span>
         <span class="meta">#103 · propio</span>
       </header>
       <img src="img/103.png" alt="post 103">
@@ -332,7 +525,7 @@
 
     <article class="card" data-n="104" data-status="posted" data-kind="post" id="p104">
       <header>
-        <span class="slot">Ayer · 15:30</span>
+        <span class="slot">05/09 · 15:30</span>
         <span class="meta">#104 · Diamandis</span>
       </header>
       <img src="img/104.png" alt="post 104">
@@ -344,7 +537,7 @@
 
     <article class="card" data-n="102" data-status="posted" data-kind="post" id="p102">
       <header>
-        <span class="slot">Ayer · 14:00</span>
+        <span class="slot">05/09 · 14:00</span>
         <span class="meta">#102 · propio</span>
       </header>
       <img src="img/102.png" alt="post 102">
@@ -356,7 +549,7 @@
 
     <article class="card reply" data-n="203" data-status="posted" data-kind="reply" id="p203">
       <header>
-        <span class="slot">REPLY · Ayer · 12:30</span>
+        <span class="slot">REPLY · 05/09 · 12:30</span>
         <span class="meta">#203 · @AndrewYNg</span>
       </header>
       <p class="copy">Steer el agente es la skill.<br>Eso se enseña en el flujo real, no en un curso suelto.<br><br>Quién sabe pedir, multiplica. Quién solo observa, se queda.</p>
@@ -367,7 +560,7 @@
 
     <article class="card reply" data-n="202" data-status="posted" data-kind="reply" id="p202">
       <header>
-        <span class="slot">REPLY · Ayer · 12:00</span>
+        <span class="slot">REPLY · 05/09 · 12:00</span>
         <span class="meta">#202 · @OpenAI</span>
       </header>
       <p class="copy">El valor no es que “haga clic”.<br>Es qué clic le dejamos hacer.<br><br>El riesgo no es el modelo: es permiso sin dueño.</p>
@@ -378,7 +571,7 @@
 
     <article class="card reply" data-n="201" data-status="posted" data-kind="reply" id="p201">
       <header>
-        <span class="slot">REPLY · Ayer · 11:30</span>
+        <span class="slot">REPLY · 05/09 · 11:30</span>
         <span class="meta">#201 · @sama</span>
       </header>
       <p class="copy">El rollout importa menos que la gobernanza del acceso.<br>Primero dueño del proceso, después asiento Enterprise.<br>Si no, Astra acelera el desorden.</p>
@@ -389,7 +582,7 @@
 
     <article class="card" data-n="101" data-status="posted" data-kind="post" id="p101">
       <header>
-        <span class="slot">Ayer · 11:00</span>
+        <span class="slot">05/09 · 11:00</span>
         <span class="meta">#101 · propio</span>
       </header>
       <img src="img/101.png" alt="post 101">
