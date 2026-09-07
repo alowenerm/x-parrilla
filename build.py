@@ -127,8 +127,8 @@ def main():
             f.unlink()
             print('borrada imagen huérfana', f.name)
 
-    pend = sorted([i for i in q if i.get('status') in ('pending','hold')], key=lambda i: i['when'])
-    post = sorted([i for i in q if i.get('status') == 'posted'], key=lambda i: i['when'], reverse=True)  # deleted omitted
+    pend = sorted([i for i in q if i.get('status') in ('pending','hold') and i.get('kind') != 'reply'], key=lambda i: i['when'])
+    post = sorted([i for i in q if i.get('status') == 'posted' and i.get('kind') != 'reply'], key=lambda i: i['when'], reverse=True)  # deleted omitted; replies on replies.html
 
     def col(items, empty):
         return '\n\n'.join(card(i) for i in items) if items else f'    <p class="empty">{empty}</p>'
@@ -150,6 +150,10 @@ def main():
   </div>
   <div class="sub">Sacar o comentar acá. El mensaje se copia: pégalo en el chat.</div>
 </header>
+<nav class="tabs">
+  <a class="tab active" href="./">Parrilla</a>
+  <a class="tab" href="replies.html">Replies</a>
+</nav>
 <main>
   <section class="parrilla">
     <h2>Parrilla · por publicar ({len(pend)})</h2>
