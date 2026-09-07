@@ -105,18 +105,22 @@
   nav.tabs a.tab.active { color: #2ee86a; border-bottom-color: #2ee86a; font-weight: 700; }
 
 
-  nav.tabs {
-    display: flex; gap: 0; border-bottom: 2px solid #2ee86a;
-    background: #000; padding: 0 12px;
+  .orig {
+    margin: 0; padding: 10px;
+    background: #f4f7fb; color: #111;
+    border-bottom: 1px dashed #ccd;
+    font-size: 12px; line-height: 1.4;
   }
-  nav.tabs a.tab {
-    color: #9a9a9a; text-decoration: none;
-    font-family: ui-monospace, Menlo, monospace;
-    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
-    padding: 12px 16px; border-bottom: 3px solid transparent; margin-bottom: -2px;
+  .orig .label {
+    display: block; font-size: 10px; letter-spacing: .12em;
+    text-transform: uppercase; color: #1a4a9e; font-weight: 700; margin-bottom: 6px;
   }
-  nav.tabs a.tab:hover { color: #2ee86a; }
-  nav.tabs a.tab.active { color: #2ee86a; border-bottom-color: #2ee86a; font-weight: 700; }
+  .reply-draft .label {
+    display: block; font-size: 10px; letter-spacing: .12em;
+    text-transform: uppercase; color: #0a7a3a; font-weight: 700;
+    padding: 8px 10px 0; background: #fff;
+  }
+  .card.reply { box-shadow: 0 0 0 3px #6aa8ff; }
 
   .wrap-pad { padding: 12px; background: #161616; }
   .grid { display: flex; flex-direction: column; gap: 14px; }
@@ -126,98 +130,236 @@
 <header class="top">
   <div>
     <h1>andres@x:~$ replies</h1>
-    <div class="sub">@andres_lowener · cuentas medianas · Santiago</div>
+    <div class="sub">@andres_lowener · post original + respuesta · Santiago</div>
   </div>
-  <div class="sub">R1–R10 en cola. Sacar: escribe en el chat.</div>
+  <div class="sub">Contexto completo por tarjeta</div>
 </header>
-
 <nav class="tabs">
-  <a class="tab " href="./">Parrilla</a>
+  <a class="tab" href="./">Parrilla</a>
   <a class="tab active" href="replies.html">Replies</a>
 </nav>
-
 <section class="wrap-pad">
-  <h2>Replies · por publicar (10)</h2>
-  <div class="grid">
+  <h2>En cola / publicadas (13)</h2>
+  <div class="grid" id="scheduled">
+    <article class="card reply" data-status="posted" id="#201">
+      <header>
+        <span class="slot">11:30 · posted</span>
+        <span class="meta">#201 · @sama</span>
+      </header>
+      <div class="orig">
+        <span class="label">Post original @sama</span>
+        GPT-6 Astra is now available to all Pro, Enterprise, and Business Premium users in Work/Codex, and is available in the API.<br><br>We will start rollout to Plus and Business users next.<br><br>Thank you for the patience.
+        <div style="margin-top:8px"><a href="https://x.com/sama/status/2095973658867171733" target="_blank" rel="noopener">abrir en X</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">El rollout importa menos que la gobernanza del acceso.<br>Primero dueño del proceso, después asiento Enterprise.<br>Si no, Astra acelera el desorden.</p>
+      </div>
+      <p class="cite"><a href="https://x.com/andres_lowener/status/2096277368792928678" target="_blank" rel="noopener">ver nuestro reply en X</a></p>
+    </article>
+
+    <article class="card reply" data-status="posted" id="#202">
+      <header>
+        <span class="slot">12:00 · posted</span>
+        <span class="meta">#202 · @OpenAI</span>
+      </header>
+      <div class="orig">
+        <span class="label">Post original @OpenAI</span>
+        This is GPT-6 Astra.<br><br>Anything you can do on a computer, Astra can do for you. Fast.
+        <div style="margin-top:8px"><a href="https://x.com/OpenAI/status/2095595741528125780" target="_blank" rel="noopener">abrir en X</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">El valor no es que “haga clic”.<br>Es qué clic le dejamos hacer.<br><br>El riesgo no es el modelo: es permiso sin dueño.</p>
+      </div>
+      <p class="cite"><a href="https://x.com/andres_lowener/status/2096301324325306734" target="_blank" rel="noopener">ver nuestro reply en X</a></p>
+    </article>
+
+    <article class="card reply" data-status="posted" id="#203">
+      <header>
+        <span class="slot">12:30 · posted</span>
+        <span class="meta">#203 · @AndrewYNg</span>
+      </header>
+      <div class="orig">
+        <span class="label">Post original @AndrewYNg</span>
+        The most important skills for using AI coding agents effectively. Presenting the AI Engineering Skills Map for using coding agents. https://x.com/i/article/2095882148670832640
+        <div style="margin-top:8px"><a href="https://x.com/AndrewYNg/status/2095890279865721217" target="_blank" rel="noopener">abrir en X</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">Steer el agente es la skill.<br>Eso se enseña en el flujo real, no en un curso suelto.<br><br>Quién sabe pedir, multiplica. Quién solo observa, se queda.</p>
+      </div>
+      <p class="cite"><a href="https://x.com/andres_lowener/status/2096307507329106165" target="_blank" rel="noopener">ver nuestro reply en X</a></p>
+    </article>
+
     <article class="card reply" data-status="pending" id="R1">
       <header>
         <span class="slot">08:30 · pending</span>
-        <span class="meta">#301 · @every · ~55k</span>
+        <span class="meta">#301 · @every</span>
       </header>
-      <p class="copy">Compartir workflows no basta. Hay que nombrar dueño, estándar y qué se mide.<br>Sin eso, “adopción” es gente probando sola.</p>
-      <p class="cite"><a href="https://x.com/every/status/2095860468904763588" target="_blank" rel="noopener">post original · leveling up company AI</a></p>
+      <div class="orig">
+        <span class="label">Post original @every</span>
+        “How do you level up an entire company to use AI?”<br><br>This is probably the most burning question execs have for our consultants @NataliaZarina and @hammer_mt.<br><br>Their answer: Create shared workflows, shared examples, and shared standards. 1,000 employees maintaining 1,000 private prompt folders is a nightmare. You want those workflows to become skills that anyone in the company can use.<br><br>Read more tips from our AI consulting team:<br>https://every.to/p/every-answers-your-ai-questions?utm_source=x&amp;utm_content=33questions260828
+        <div style="margin-top:8px"><a href="https://x.com/every/status/2095860468904763588" target="_blank" rel="noopener">abrir en X · leveling up company AI</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">Compartir workflows no basta. Hay que nombrar dueño, estándar y qué se mide.<br>Sin eso, “adopción” es gente probando sola.</p>
+      </div>
+      
     </article>
+
     <article class="card reply" data-status="pending" id="R2">
       <header>
         <span class="slot">09:00 · pending</span>
-        <span class="meta">#302 · @natebjones · ~8k</span>
+        <span class="meta">#302 · @natebjones</span>
       </header>
-      <p class="copy">Menos instrucciones suele ser más robusto.<br>En empresa el harness gordo es deuda: nadie lo mantiene y el agente improvisa.</p>
-      <p class="cite"><a href="https://x.com/natebjones/status/2096387700303753570" target="_blank" rel="noopener">post original · harness más liviano</a></p>
+      <div class="orig">
+        <span class="label">Post original @natebjones</span>
+        Are harnesses getting lighter with smarter models? Field notes from work I did with Astra this weekend:<br><br>So I asked Astra to review my Codex harness and we cut one writing workflow from ~10K words of required instructions to ~1.2K.<br><br>Some of this was just overdue cleanup tbh. I had overlapping instructions and roles that needed to read six files before starting anything.<br><br>But it made me think about how much of my setup is still useful as the models get smarter. How much am I making a very capable model follow a process I haven’t questioned in a while?<br><br>I kept the writing examples because Astra still needs to see what I mean by “sounds like me.” <br><br>I’m increasingly comfortable letting the model figure it out. Giving it the context to make good decisions still takes effort, especially when I’m asking it to do more.<br><br>tldr// If you haven&#x27;t looked at your harness in a minute, peek under the hood.
+        <div style="margin-top:8px"><a href="https://x.com/natebjones/status/2096387700303753570" target="_blank" rel="noopener">abrir en X · harness más liviano</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">Menos instrucciones suele ser más robusto.<br>En empresa el harness gordo es deuda: nadie lo mantiene y el agente improvisa.</p>
+      </div>
+      
     </article>
+
     <article class="card reply" data-status="pending" id="R3">
       <header>
         <span class="slot">09:30 · pending</span>
-        <span class="meta">#303 · @alliekmiller · ~109k</span>
+        <span class="meta">#303 · @alliekmiller</span>
       </header>
-      <p class="copy">Falta la 5ª en empresa: permisos.<br>Thing + tools + memory + share… y quién puede romper qué.</p>
-      <p class="cite"><a href="https://x.com/alliekmiller/status/2095948761604427925" target="_blank" rel="noopener">post original · 4 piezas core de AI</a></p>
+      <div class="orig">
+        <span class="label">Post original @alliekmiller</span>
+        At the core of AI, you really just need:<br><br>1) a thing that does<br>2) connections into tools<br>3) a place to hold stuff<br>4) a spot to share and update<br><br>In slot 1, we&#x27;re talking AI agents like Codex or Claude Code or GrokBot. Whether you have a daily driver or a mix and match, doesn&#x27;t matter. Just an LLM-based system that can spin up hundreds or thousands of agents across multiple tasks at once.<br><br>In slot 2, we&#x27;re talking toggling them toggles and connecting Codex to places like Gmail, Stripe, Magnific, Remotion, web browser, computer use, etc. Your risk tolerance will determine how many toggles you toggle. I now feel comfortable with both Codex and Claude Code having access to my GDrive, Fireflies, etc. and did not feel comfortable when the tool connections first came out.<br><br>In slot 3, when AI creates a document or a dashboard, where is it? This could be Google Drive, Dropbox, GitHub, your local storage, Obisidian. But it needs to be a place for your agents to build up their artifacts, task managers, and brain. Their memory. The more multiplayer your system is, the more IAM and cloud matter (aka local storage won&#x27;t cut it).<br><br>In slot 4, you need a hub. When AI completes tasks for you or wants to ask you something, where is it doing that? I use Slack as my team&#x27;s hub and we have enabled Claude Tag and built our own Claude Code apps as well. <br><br>Am I missing anything? Let me know.
+        <div style="margin-top:8px"><a href="https://x.com/alliekmiller/status/2095948761604427925" target="_blank" rel="noopener">abrir en X · 4 piezas core de AI</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">Falta la 5ª en empresa: permisos.<br>Thing + tools + memory + share… y quién puede romper qué.</p>
+      </div>
+      
     </article>
+
     <article class="card reply" data-status="pending" id="R4">
       <header>
         <span class="slot">12:00 · pending</span>
-        <span class="meta">#304 · @bentossell · ~200k</span>
+        <span class="meta">#304 · @bentossell</span>
       </header>
-      <p class="copy">Lo útil no es que “note” trabajo extra.<br>Es si puede hacerlo sin approval. Autonomía sin bitácora es riesgo con cara amable.</p>
-      <p class="cite"><a href="https://x.com/bentossell/status/2096200500827873721" target="_blank" rel="noopener">post original · Astra toma el thread</a></p>
+      <div class="orig">
+        <span class="label">Post original @bentossell</span>
+        i told astra to take over the sol thread and finish up<br><br>it’s cleaning up space that it noticed could be done along the way 🥹
+        <div style="margin-top:8px"><a href="https://x.com/bentossell/status/2096200500827873721" target="_blank" rel="noopener">abrir en X · Astra toma el thread</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">Lo útil no es que “note” trabajo extra.<br>Es si puede hacerlo sin approval. Autonomía sin bitácora es riesgo con cara amable.</p>
+      </div>
+      
     </article>
+
     <article class="card reply" data-status="pending" id="R5">
       <header>
         <span class="slot">12:30 · pending</span>
-        <span class="meta">#305 · @testingcatalog · ~75k</span>
+        <span class="meta">#305 · @testingcatalog</span>
       </header>
-      <p class="copy">MCP a datos internos es potencia.<br>El proyecto real: identidad del agente y qué sistemas puede tocar.</p>
-      <p class="cite"><a href="https://x.com/testingcatalog/status/2096357644491456542" target="_blank" rel="noopener">post original · Gemini Business + MCP</a></p>
+      <div class="orig">
+        <span class="label">Post original @testingcatalog</span>
+        GOOGLE 🔥: Gemini Business now supports custom MCPs!<br><br>&gt; New: custom MCP server connections - Connect private data and internal tools.<br><br>It&#x27;s happening! 🤯<br><br>How long until we see them on consumer Gemini too?
+        <div style="margin-top:8px"><a href="https://x.com/testingcatalog/status/2096357644491456542" target="_blank" rel="noopener">abrir en X · Gemini Business + MCP</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">MCP a datos internos es potencia.<br>El proyecto real: identidad del agente y qué sistemas puede tocar.</p>
+      </div>
+      
     </article>
+
     <article class="card reply" data-status="pending" id="R6">
       <header>
         <span class="slot">14:00 · pending</span>
-        <span class="meta">#306 · @rohanpaul_ai · ~156k</span>
+        <span class="meta">#306 · @rohanpaul_ai</span>
       </header>
-      <p class="copy">El desperdicio no es cómputo. Es conocimiento que la empresa ya tiene y no empaqueta.<br>Skills = SOPs vivos. Ahí está el ROI.</p>
-      <p class="cite"><a href="https://x.com/rohanpaul_ai/status/2096406594460487716" target="_blank" rel="noopener">post original · agents rediscovering vs skills</a></p>
+      <div class="orig">
+        <span class="label">Post original @rohanpaul_ai</span>
+        Very useful insight in this paper. <br><br>AI agents may be wasting huge amounts of effort rediscovering things they could simply remember as reusable skills.<br><br>Better agents may come from teaching them proven ways to work, not endlessly making the underlying model smarter.<br><br>The current problem is: a model may know what a tool or method does, but still waste time figuring out which one to use, how to set it up, and what to do when it fails.<br><br>DisCo turns GitHub repositories, papers, and task research into compact skills that tell the agent what to use, when to use it, and how to proceed.<br><br>With GPT-5.5, Codex, and the task-running budget unchanged, MLE-bench jumped from 31.11% to 72.89%. PaperBench, FrontierCS, and PassNet improved too.<br><br>Its library contains 5,353 skills distilled from 1,000 ML repositories.
+        <div style="margin-top:8px"><a href="https://x.com/rohanpaul_ai/status/2096406594460487716" target="_blank" rel="noopener">abrir en X · agents rediscovering vs skills</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">El desperdicio no es cómputo. Es conocimiento que la empresa ya tiene y no empaqueta.<br>Skills = SOPs vivos. Ahí está el ROI.</p>
+      </div>
+      
     </article>
+
     <article class="card reply" data-status="pending" id="R7">
       <header>
         <span class="slot">15:00 · pending</span>
-        <span class="meta">#307 · @TheTuringPost · ~87k</span>
+        <span class="meta">#307 · @TheTuringPost</span>
       </header>
-      <p class="copy">Enseñar al agente a operar software es el salto.<br>Falta versionar y evaluar el skill antes de soltarlo a producción.</p>
-      <p class="cite"><a href="https://x.com/TheTuringPost/status/2096240393117692157" target="_blank" rel="noopener">post original · AREX-Skill / repos → skills</a></p>
+      <div class="orig">
+        <span class="label">Post original @TheTuringPost</span>
+        AREX-Skill turns knowledge from GitHub repos into reusable skill packages for AI agents.<br><br>It teaches agents how to operate software in practice.<br><br>The AREX-Skill Library already contains 5,000+ verified skills distilled from 1,000 ML repos. Your agent loads only the skills relevant to its task.<br><br>Each skill is built around a SKILL.md file and can also include:<br><br>- focused references<br>- executable scripts<br>- validation checks<br>- failure-recovery guidance<br><br>With the same GPT-5.5 model, harness, and execution budget, but added AREX-Skill, the MLE-bench “Any Medal” rate jumped from 31.11% to 72.89%<br><br>The skills use the open Agent Skills format and can be exported to Codex and Claude Code and other compatible agents.<br><br>Behind the system is DisCo: a research agent with Creator and Researcher modes that creates and verifies skills, then routes and uses them during research. (btw, DisCo is now the most popular paper of the week)
+        <div style="margin-top:8px"><a href="https://x.com/TheTuringPost/status/2096240393117692157" target="_blank" rel="noopener">abrir en X · AREX-Skill / repos → skills</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">Enseñar al agente a operar software es el salto.<br>Falta versionar y evaluar el skill antes de soltarlo a producción.</p>
+      </div>
+      
     </article>
+
     <article class="card reply" data-status="pending" id="R8">
       <header>
         <span class="slot">15:30 · pending</span>
-        <span class="meta">#308 · @gitlab · ~172k</span>
+        <span class="meta">#308 · @gitlab</span>
       </header>
-      <p class="copy">No todo caso merece el modelo caro.<br>Un funnel por riesgo es transformación de verdad: costo, latencia y control en la misma decisión.</p>
-      <p class="cite"><a href="https://x.com/gitlab/status/2095967891795456083" target="_blank" rel="noopener">post original · tiered models for security ops</a></p>
+      <div class="orig">
+        <span class="label">Post original @gitlab</span>
+        Turns out you don&#x27;t need the most expensive AI model running on every case. <br><br>GitLab&#x27;s security ops team built a tiered funnel that filters out obvious abuse before it ever reaches an LLM, saving serious budget while keeping accuracy intact. According to GitLab&#x27;s Matt Coons, sometimes the smartest move is deciding what shouldn&#x27;t reach the model at all. <br><br>Learn more.https://thenewstack.io/minimize-ai-security-spend/
+        <div style="margin-top:8px"><a href="https://x.com/gitlab/status/2095967891795456083" target="_blank" rel="noopener">abrir en X · tiered models for security ops</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">No todo caso merece el modelo caro.<br>Un funnel por riesgo es transformación de verdad: costo, latencia y control en la misma decisión.</p>
+      </div>
+      
     </article>
+
     <article class="card reply" data-status="pending" id="R9">
       <header>
         <span class="slot">17:00 · pending</span>
-        <span class="meta">#309 · @zapier · ~96k</span>
+        <span class="meta">#309 · @zapier</span>
       </header>
-      <p class="copy">Casar modelo con proceso es el trabajo.<br>Finance approvals ≠ sales follow-ups. El portfolio se diseña; no se improvisa.</p>
-      <p class="cite"><a href="https://x.com/zapier/status/2095897528818364684" target="_blank" rel="noopener">post original · which model for which workflow</a></p>
+      <div class="orig">
+        <span class="label">Post original @zapier</span>
+        Three new AI models dropped this week. Here&#x27;s which workflows they&#x27;re actually good at:<br><br>Claude Fable 5.1 → best for finance approvals, support escalations, sales follow-ups<br><br>Gemini 3.8 Flash → best Flash model yet for ops + marketing<br><br>GPT-6 Astra (new top score on AutomationBench: 41.4%) → best for CRM reconciliation, compliance checks, deal review prep
+        <div style="margin-top:8px"><a href="https://x.com/zapier/status/2095897528818364684" target="_blank" rel="noopener">abrir en X · which model for which workflow</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">Casar modelo con proceso es el trabajo.<br>Finance approvals ≠ sales follow-ups. El portfolio se diseña; no se improvisa.</p>
+      </div>
+      
     </article>
+
     <article class="card reply" data-status="pending" id="R10">
       <header>
         <span class="slot">20:00 · pending</span>
-        <span class="meta">#310 · @dbreunig · ~10k</span>
+        <span class="meta">#310 · @dbreunig</span>
       </header>
-      <p class="copy">Persistencia sin criterio de parada es bucle caro.<br>En ops: cuándo insiste, cuándo escala a humano, cuándo cierra.</p>
-      <p class="cite"><a href="https://x.com/dbreunig/status/2095915919201718315" target="_blank" rel="noopener">post original · persistent agents / give up early</a></p>
+      <div class="orig">
+        <span class="label">Post original @dbreunig</span>
+        • Most coding agent users would get frustrated if agents gave up early, took too long, or forgot what the task.<br>• So labs have been designed “persistent, proactive intelligence that can operate computers, [and] collaborate with other agents.” (their words)<br>• The hack is scary and surprising, but the capabilities were specifically cultivated.
+        <div style="margin-top:8px"><a href="https://x.com/dbreunig/status/2095915919201718315" target="_blank" rel="noopener">abrir en X · persistent agents / give up early</a></div>
+      </div>
+      <div class="reply-draft">
+        <span class="label">Nuestra respuesta</span>
+        <p class="copy">Persistencia sin criterio de parada es bucle caro.<br>En ops: cuándo insiste, cuándo escala a humano, cuándo cierra.</p>
+      </div>
+      
     </article>
   </div>
 </section>
