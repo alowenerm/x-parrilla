@@ -440,9 +440,11 @@
     "text": "Persistencia sin criterio de parada es bucle caro.\nEn ops: cuándo insiste, cuándo escala a humano, cuándo cierra.",
     "image": "",
     "image_downloads": "",
-    "status": "pending",
+    "status": "posted",
     "proposal_id": "R10",
     "topic": "persistent agents / give up early",
+    "posted_url": "https://x.com/andres_lowener/status/2097102038077202579",
+    "posted_at": "2026-09-07 20:18",
     "img_rel": ""
   }
 ]
